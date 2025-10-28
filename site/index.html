@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,11 @@
     <link rel="icon" href="/assets/logo-sem-fundo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400;1,700&family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">  <!-- Fontes utilizadas -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400;1,700&family=Cinzel+Decorative:wght@400;700;900&display=swap"
+        rel="stylesheet"> <!-- Fontes utilizadas -->
 </head>
+
 <body>
     <div class="header">
         <div class="container">
@@ -42,8 +46,50 @@
         </div>
     </div>
 
+    <div class="banner">
+        <div class="container">
+            <h1 class="titulo">A Little Piece Of My Soul</h1>
+            <p>Entre <span>agora</span> nesse universo de <span>música sombria!</span></p>
+            <button onclick="quizGotico()">Descubra qual banda gótica te representa</button>
+        </div>
+    </div>
+
+    <div class="sobre">
+        <h2>Um espaço para aqueles que vivem entre os sons e as sombras</h2>
+        <p><span>A Little Piece of My Soul</span> nasceu para ser uma imersão na subcultura gótica, desde a arte, ao som
+            e à experiência pessoal.</p>
+        <p>Descubra bandas, lugares em São Paulo e uma estética que transcenderá o tempo.</p>
+    </div>
+
+    <div class="hyperlinks">
+        <div class="container">
+            <div class="boxes">
+                <div class="box">
+                    <h3>A Subcultura</h3>
+                    <p>Origem, estética e filosofia gótica</p>
+                    <a href="subcultura.html">Explorar</a>
+                </div>
+                <div class="box">
+                    <h3>Bandas</h3>
+                    <p>Um dos principais pilares da subcultura e foco do projeto</p>
+                    <a href="bandas.html">Ouvir</a>
+                </div>
+                <div class="box">
+                    <h3>Quiz</h3>
+                    <p>Descubra qual banda gótica representa sua essência.</p>
+                    <a href="quiz.html">Começar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="footer">
         <div>A Little Piece of My Soul — criado por Diego Henrique de Novais Menegaldo 🦇🍷🖤</div>
     </div>
 </body>
 </html>
+<script>
+    function quizGotico(){
+        window.location.href = 'quiz.html';
+    }
+</script>

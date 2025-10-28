@@ -1,3 +1,13 @@
-body{
+* {
+    box-sizing: border-box;
+}
+
+body {
     font-family: 'caudex';
+    /* Escolha da fonte do body*/
+    margin: 0;
+}
+
+.header {
+    background-color: #0d0d0d;
 }
