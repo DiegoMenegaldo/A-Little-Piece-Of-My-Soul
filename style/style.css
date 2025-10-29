@@ -1,13 +1,76 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'caudex';
-    /* Escolha da fonte do body*/
-    margin: 0;
+  font-family: 'Caudex', serif;
+  margin: 0;
+  color: #eaeaea;
+  background-color: #0d0d0d; 
+  display: flex;
+  flex-direction: column;
 }
 
-.header {
-    background-color: #0d0d0d;
+html, body { /* Deixa o site responsivo */
+  height: 100%; 
 }
+
+/* Estilização do Header */
+
+.header {
+    font-family: 'Cinzel Decorative', serif;
+    background-color: #0d0d0d;
+    border-bottom: 3px solid #660022;
+    color: #c4a1ff;
+    margin: 0;
+    padding: 0;
+    top: 0;
+}
+
+.header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 120px;
+}
+.header img{
+    height: 120px;
+    width: 120px;
+}
+
+.navbar{
+    display: flex;
+    list-style: none;
+    width: 2000px;
+    justify-content: space-between;
+    color: #2e003e;
+    font-size: 20px;
+}
+
+.navbar a{
+    outline: none;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+
+.navbar a:hover{ /* Ao passar o mouse na navbar, a cor muda*/
+    color: #ffb3d9;
+}
+
+/* Fim do Header */
+
+/* Início do Footer */
+.footer{
+    height: 100%; /* 100% da body*/
+    width: 100%; /* 100% da body*/
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-top: 3px solid #660022;
+    border-bottom: 3px solid #660022;
+    font-size: 25px;
+}
+/* Fim do Footer */
