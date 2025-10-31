@@ -82,6 +82,7 @@ html, body { /* Deixa o site responsivo */
     display: flex;
     justify-content: center;
     align-items: center;
+    border-bottom: 3px solid #660022;
 }
 
 .banner .container{
@@ -98,6 +99,7 @@ html, body { /* Deixa o site responsivo */
     font-size: 25px;
     border-radius: 15px;
     cursor: pointer;
+    margin-bottom: 2%;
 }
 
 .banner button:hover{
@@ -107,6 +109,14 @@ html, body { /* Deixa o site responsivo */
 .banner h1{
     text-decoration: underline; 
     text-decoration-color: #660022;  
+}
+
+.banner .container .little{
+    color:#ffb3d9;
+}
+
+.banner .container .soul{
+    color:#7b1339;
 }
 
 /* FIM DA PÁGINA INICIAL */
