@@ -65,6 +65,7 @@ html, body { /* Deixa o site responsivo */
 
 /* Início do Footer */
 .footer{
+    font-family: 'Caudex', serif;
     height: 100%; /* 100% da body*/
     width: 100%; /* 100% da body*/
     display: flex;
