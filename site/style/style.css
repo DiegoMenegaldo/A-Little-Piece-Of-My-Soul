@@ -120,4 +120,8 @@ html, body { /* Deixa o site responsivo */
     color:#7b1339;
 }
 
+.banner .container p{
+    font-weight: bolder;
+}
+
 /* FIM DA PÁGINA INICIAL */
