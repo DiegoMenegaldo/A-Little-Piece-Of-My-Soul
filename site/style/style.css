@@ -95,6 +95,8 @@ html, body { /* Deixa o site responsivo */
     justify-content: center;
     align-items: center;
     border-bottom: 3px solid #660022;
+    height: 100%;
+    width: 100%;
 }
 
 .banner .container{
@@ -149,6 +151,8 @@ html, body { /* Deixa o site responsivo */
     justify-content: center;
     align-items: center;
     border-bottom: 3px solid #660022;
+    height: 100%;
+    width: 100%;
 }
 
 .sobre h2{
@@ -169,8 +173,9 @@ html, body { /* Deixa o site responsivo */
 /* INÍCIO DOS HYPERLINKS DA PÁGINA INICIAL */
 .hyperlinks{
     display: flex;
-    border-bottom: 3px solid #660022;
     padding: 1% 0;
+    height: 100%;
+    width: 100%;
 }
 
 .hyperlinks .boxes{
