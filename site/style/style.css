@@ -25,17 +25,25 @@ html, body { /* Deixa o site responsivo */
     margin: 0;
     padding: 0;
     top: 0;
+    margin-left: 0;
 }
 
 .header .container{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 0 120px;
+    margin-left: 0;
 }
+
 .header img{
     height: 120px;
     width: 120px;
+}
+
+.navbar li{
+    display: flex;
+    align-items: center;
 }
 
 .navbar{
@@ -45,6 +53,8 @@ html, body { /* Deixa o site responsivo */
     justify-content: space-between;
     color: #2e003e;
     font-size: 20px;
+    margin: 0;
+    padding: 0;
 }
 
 .navbar a{
