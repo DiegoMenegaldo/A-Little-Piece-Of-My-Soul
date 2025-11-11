@@ -228,3 +228,115 @@ html, body { /* Deixa o site responsivo */
 /* FIM DOS HYPERLINKS DA PÁGINA INICIAL */
 
 /* FIM DA PÁGINA INICIAL */
+
+/* TELA DE CADASTRO */
+.cadastro{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../assets/fungo-gotico.png');
+}
+
+.cadastro .container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-cadastro{
+    background-color: #0d0d0d;
+    height: 90%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-cadastro:hover{
+    transform: scale(1.05);
+    transition: transform 0.5s ease;
+}
+
+.card{
+    text-align: center;
+    border: 5px solid #2e003e;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 80%;
+    margin-bottom: 15px;
+}
+
+.campo span{
+    display: flex;
+    width: 80%;
+    text-align: left;
+    margin-bottom: 1%;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.campo input{
+    display: flex;
+    width: 80%;
+    margin-bottom: 1%;
+    font-size: 20px;
+    border-radius: 15px;
+}
+
+.card-cadastro h2{
+    text-decoration: underline;
+    font-size: 40px;
+}
+
+.select_genero, .select_bandas{
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    height: 50%;
+    appearance: none;
+    font-size: 15px;
+}
+
+.possuiConta{
+    font-weight: bolder;
+}
+
+.cadastro button{
+    background-color: #2e003e;
+    width: 40%;
+    border-radius: 15px;
+    cursor: pointer;
+    color: #eaeaea;
+    margin-bottom: 1%;
+    border: 3px solid #c4a1ff;
+}
+
+.cadastro button:hover{
+    background-color: #660022;
+    width: 40%;
+    border-radius: 15px;
+}
+
+
+.possuiConta a{
+    color: #eaeaea;
+}
+/* FIM DO CADASTRO */
