@@ -252,6 +252,7 @@ html, body { /* Deixa o site responsivo */
     width: 40%;
     display: flex;
     flex-direction: column;
+    opacity: 90%;
 }
 
 .card-cadastro:hover{
@@ -327,6 +328,8 @@ html, body { /* Deixa o site responsivo */
     color: #eaeaea;
     margin-bottom: 1%;
     border: 3px solid #c4a1ff;
+    font-weight: bolder;
+    font-size: 15px;
 }
 
 .cadastro button:hover{
@@ -340,3 +343,70 @@ html, body { /* Deixa o site responsivo */
     color: #eaeaea;
 }
 /* FIM DO CADASTRO */
+
+/* TELA DE LOGIN */
+.login{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../assets/fungo-gotico.png');
+}
+
+.login .container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-login{
+    background-color: #0d0d0d;
+    height: 50%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    opacity: 90%;
+    border: 5px solid #2e003e;
+    border-radius: 15px;
+}
+
+.card-login:hover{
+    transform: scale(1.05);
+    transition: transform 0.5s ease;
+}
+
+.card-login h2{
+    text-decoration: underline;
+    font-size: 40px;
+}
+
+.login button{
+    background-color: #2e003e;
+    width: 40%;
+    border-radius: 15px;
+    cursor: pointer;
+    color: #eaeaea;
+    margin-bottom: 1%;
+    border: 3px solid #c4a1ff;
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+.login button:hover{
+    background-color: #660022;
+    width: 40%;
+    border-radius: 15px;
+}
+
+.login .campo span{
+    display: flex;
+    width: 80%;
+    text-align: left;
+    margin-bottom: 1%;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* FIM DO LOGIN */
