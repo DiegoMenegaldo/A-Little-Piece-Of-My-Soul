@@ -428,3 +428,21 @@ body {
 }
 
 /* FIM DO LOGIN */
+
+/* SOBRE MIM */
+.criador{
+    height: 100vh;
+    width: 100vw;
+}
+
+.criador .container{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.criador .container .container-left{
+    justify-content: center;
+    align-items: center;
+}
+/* FIM DO SOBRE MIM */
