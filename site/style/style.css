@@ -712,7 +712,70 @@ body {
 /* FIM DA SUBCULTURA */
 
 /* BANDAS */
+.generos {
+    display: flex;
+    flex-direction: column;
+    
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+}
 
+.generos h2 {
+    font-family: "Cinzel Decorative", serif;
+    font-size: 30px;
+    text-decoration: underline;
+}
+
+.generos p {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 0;
+}
+
+.bandas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-direction: row;
+}
+
+.banda {
+    background-color: #222;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    border: 3px solid #7b1339;
+}
+
+.banda:hover{
+    transform: scale(1.10);
+    transition: transform 0.5s ease;
+}
+
+.banda img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.banda span {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.banda a {
+    color: #c4a1ff;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.banda a:hover {
+    color: #ffb3d9;
+}
 /* FIM DAS BANDAS */
 
 /* LOCAIS EM SP */
