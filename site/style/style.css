@@ -602,3 +602,74 @@ body {
     font-size: 20px;
 }
 /* FIM DO SOBRE MIM */
+
+/* SUBBULTURA */
+
+/* FIM DA SUBCULTURA */
+
+/* BANDAS */
+
+/* FIM DAS BANDAS */
+
+/* LOCAIS EM SP */
+.introducao{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.introducao h2{
+    font-size: 40px;
+    text-decoration: underline;
+}
+
+.introducao p{
+    font-size: 25px;
+}
+
+.locais{
+    height: 100%;
+    width: 100%;
+}
+
+.locais .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    height: 100%;
+    width: 100%;
+    gap: 20px;
+    padding: 10px;
+}
+
+.card-local{
+    display: flex;
+    flex-direction: column;
+    border: 3px solid #7b1339;
+    text-align: center;
+}
+
+.card-local h3{
+    font-size: 20px;
+    text-decoration: underline;
+    font-family: 'Cinzel Decorative';
+}
+
+.card-local p{
+    font-size: 18px;
+    text-align: center;
+}
+.card-local a{
+    font-size: 18px;
+    color: #c4a1ff;
+    text-align: center;
+}
+
+.card-local a:hover{
+    font-size: 18px;
+    color: #660022;
+    text-align: center;
+    transform: scale(1.10);
+    transition: transform 0.5s ease;
+}
+/* FIM DOS LOCAIS EM SP */
