@@ -611,8 +611,6 @@ body {
 
 /* SUBBULTURA */
 .a-subcultura{
-    height: 100%;
-    width: 100%;
 }
 
 .a-subcultura .container{
@@ -667,7 +665,7 @@ body {
 .esteticas{
     display: flex;
     flex-direction: column;
-    height: 300%;
+    height: 500%;
     width: 100%;
     align-items: center;
     margin-top: 2%;
@@ -792,12 +790,7 @@ body {
 }
 
 .introducao p{
-    font-size: 25px;
-}
-
-.locais{
-    height: 100%;
-    width: 100%;
+    font-size: 20px;
 }
 
 .locais .container{
@@ -805,6 +798,8 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     height: 100%;
     width: 100%;
+    flex:1;
+    justify-content: center;
     gap: 20px;
     padding: 10px;
 }
