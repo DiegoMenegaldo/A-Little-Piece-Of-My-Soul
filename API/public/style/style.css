@@ -1,0 +1,908 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Caudex', serif;
+    margin: 0;
+    color: #eaeaea;
+    background-color: #0d0d0d;
+    display: flex;
+    flex-direction: column;
+}
+
+html,
+body {
+    /* Deixa o site responsivo */
+    height: 100%;
+}
+
+/* Estilização do Header */
+
+.header {
+    font-family: 'Cinzel Decorative', serif;
+    background-color: #0d0d0d;
+    border-bottom: 3px solid #660022;
+    color: #c4a1ff;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    margin-left: 0;
+}
+
+.header .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 120px;
+    margin-left: 0;
+}
+
+.header img {
+    height: 120px;
+    width: 120px;
+}
+
+.navbar li {
+    display: flex;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    list-style: none;
+    width: 2000px;
+    justify-content: space-between;
+    color: #2e003e;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar a {
+    outline: none;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    color: #c4a1ff;
+}
+
+
+.navbar a:hover {
+    /* Ao passar o mouse na navbar, a cor muda*/
+    color: #ffb3d9;
+}
+
+/* Fim do Header */
+
+/* Início do Footer */
+.footer {
+    font-family: 'Caudex', serif;
+    height: 100%;
+    /* 100% da body*/
+    width: 100%;
+    /* 100% da body*/
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-top: 3px solid #660022;
+    border-bottom: 3px solid #660022;
+    font-size: 25px;
+}
+
+/* Fim do Footer */
+
+/* PÁGINA INICIAL */
+
+/* BANNER DA PÁGINA INICIAL */
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 3px solid #660022;
+    height: 100%;
+    width: 100%;
+}
+
+.banner .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.banner .container button {
+    background-color: #660022;
+    color: #eaeaea;
+    width: 120%;
+    font-size: 25px;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-bottom: 2%;
+}
+
+.banner button:hover {
+    background-color: #2e003e;
+}
+
+.banner h1 {
+    text-decoration: underline;
+    text-decoration-color: #660022;
+}
+
+.banner .container .little {
+    color: #ffb3d9;
+}
+
+.banner .container .soul {
+    color: #7b1339;
+}
+
+.banner .container p {
+    font-weight: bolder;
+    font-size: 20px;
+    margin-top: 0;
+}
+
+.banner .container span {
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+/* FIM DO BANNER DA PÁGINA INICIAL */
+
+/* INÍCIO DO SOBRE NA PÁGINA INICIAL */
+.sobre {
+    justify-content: center;
+    align-items: center;
+    border-bottom: 3px solid #660022;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.sobre h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: underline;
+}
+
+.sobre p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+/* FIM DO SOBRE DA PÁGINA INICIAL*/
+
+/* INÍCIO DOS HYPERLINKS DA PÁGINA INICIAL */
+.hyperlinks {
+    display: flex;
+    padding: 1% 0;
+    height: 100%;
+    width: 100%;
+}
+
+.hyperlinks .boxes {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.hyperlinks .box {
+    display: flex;
+    background-color: #660022;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-top: 5px solid #2e003e;
+    border-bottom: 5px solid #2e003e;
+    border-left: 5px solid #2e003e;
+    border-right: 5px solid #2e003e;
+}
+
+.hyperlinks .box:hover {
+    border-color: #c4a1ff;
+    transform: scale(1.05);
+    transition: transform 0.5s ease;
+}
+
+.hyperlinks .box h3 {
+    text-decoration: underline;
+    font-size: 30px;
+    margin-bottom: 0;
+}
+
+.hyperlinks .box p {
+    text-decoration: underline;
+    font-size: 18px;
+}
+
+.hyperlinks .box a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #ffb3d9;
+    border-top: 2px solid #c4a1ff;
+    border-right: 2px solid #c4a1ff;
+    border-left: 2px solid #c4a1ff;
+    border-bottom: 2px solid #c4a1ff;
+}
+
+/* FIM DOS HYPERLINKS DA PÁGINA INICIAL */
+
+/* FIM DA PÁGINA INICIAL */
+
+/* TELA DE CADASTRO */
+.cadastro {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../assets/fungo-gotico.png');
+}
+
+.cadastro .container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-cadastro {
+    background-color: #0d0d0d;
+    height: 90%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    opacity: 90%;
+}
+
+.card-cadastro:hover {
+    transform: scale(1.05);
+    transition: transform 0.5s ease;
+}
+
+.card {
+    text-align: center;
+    border: 5px solid #2e003e;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 80%;
+    margin-bottom: 15px;
+}
+
+.campo span {
+    display: flex;
+    width: 80%;
+    text-align: left;
+    margin-bottom: 1%;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.campo input {
+    display: flex;
+    width: 80%;
+    margin-bottom: 1%;
+    font-size: 20px;
+    border-radius: 15px;
+}
+
+.card-cadastro h2 {
+    text-decoration: underline;
+    font-size: 40px;
+}
+
+.select_genero,
+.select_bandas {
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    height: 50%;
+    appearance: none;
+    font-size: 15px;
+}
+
+.possuiConta {
+    font-weight: bolder;
+}
+
+.cadastro button {
+    background-color: #2e003e;
+    width: 40%;
+    border-radius: 15px;
+    cursor: pointer;
+    color: #eaeaea;
+    margin-bottom: 1%;
+    border: 3px solid #c4a1ff;
+    font-weight: bolder;
+    font-size: 15px;
+}
+
+.cadastro button:hover {
+    background-color: #660022;
+    width: 40%;
+    border-radius: 15px;
+}
+
+
+.possuiConta a {
+    color: #eaeaea;
+}
+
+/* FIM DO CADASTRO */
+
+/* TELA DE LOGIN */
+.login {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../assets/fungo-gotico.png');
+}
+
+.login .container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-login {
+    background-color: #0d0d0d;
+    height: 50%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    opacity: 90%;
+    border: 5px solid #2e003e;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-login:hover {
+    transform: scale(1.05);
+    transition: transform 0.5s ease;
+}
+
+.card-login h2 {
+    text-decoration: underline;
+    font-size: 40px;
+}
+
+.login button {
+    background-color: #2e003e;
+    width: 40%;
+    border-radius: 15px;
+    cursor: pointer;
+    color: #eaeaea;
+    margin-bottom: 1%;
+    border: 3px solid #c4a1ff;
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+.login button:hover {
+    background-color: #660022;
+    width: 40%;
+    border-radius: 15px;
+}
+
+.login .campo span {
+    display: flex;
+    width: 80%;
+    text-align: left;
+    margin-bottom: 1%;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.login .formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* FIM DO LOGIN */
+
+/* SOBRE MIM */
+.criador{
+    height: 100vh;
+    width: 100vw;
+}
+
+.criador .container{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    gap: 1%;
+}
+
+.criador .container .container-left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    text-align: justify;
+    padding: 20px;
+    font-size: 24px;
+    border: 2px solid #7b1339;
+    border-radius: 15px;
+    margin-top: 1%;
+}
+
+.criador .container .container-left h2{
+    font-family: 'Cinzel Decorative';
+    text-decoration: underline;
+    font-size: 30px;
+}
+
+
+.criador .container .container-right{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 50%;
+    justify-content: flex-start;
+    margin-top: 2%;
+}
+
+.criador .container .container-right img{
+    height: 600px;
+    width: 500px;
+    border-radius: 15px;
+    margin-bottom: 5%;
+}
+
+.ranking{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.ranking h3{
+    font-size: 27px;
+    font-family: 'Cinzel Decorative';
+    text-decoration: underline;
+}
+
+.tabela-ranking {
+    width: 60%;
+    background-color: #111; 
+    color: #eee;
+    font-family: 'Cinzel Decorative', serif;
+}
+
+.tabela-ranking th {
+    background-color: #1b1b1b;
+    color: #c4a1ff;
+    padding: 12px;
+    font-size: 18px;
+    border-bottom: 2px solid #222;
+    text-transform: uppercase;
+}
+
+.tabela-ranking td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+}
+
+.tabela-ranking tr:hover {
+    background-color: #222;
+}
+
+.shows-goticos{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.shows-goticos h3{
+    font-family: 'Cinzel Decorative';
+    font-size: 27px;
+    text-decoration: underline;
+}
+
+.shows-goticos .container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.shows-goticos .container .container-left{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    margin-left: 2%;
+    margin-right: 2%;
+    border: 2px solid #2e003e;
+}
+
+.shows-goticos .container .container-left ul{
+    list-style: none;
+    font-size: 18px;
+}
+
+.shows-goticos .container .container-left:hover{
+    transform: scale(1.05);
+    transition: transform 0.5s ease;
+}
+
+.shows-goticos .container .container-right{
+    margin-top: 2%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.shows-goticos .container .container-right video{
+    width: 90%;
+}
+
+.shows-goticos .container .container-right span{
+    text-decoration: underline;
+    font-size: 18px;
+    text-align: center;
+}
+
+.shows-outros{
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.shows-outros .container{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.shows-outros .container h2{
+    font-size: 25px;
+    text-decoration: underline;
+}
+
+.shows-outros .container ul{
+    list-style: none;
+    font-size: 20px;
+}
+/* FIM DO SOBRE MIM */
+
+/* SUBBULTURA */
+.a-subcultura{
+}
+
+.a-subcultura .container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.a-subcultura .container .container-left{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 1%;
+    border: 2px solid #7b1339;
+    padding: 2%;
+    gap: 2%;
+    border-radius: 15px;
+}
+
+.a-subcultura .container .container-left h2{
+    text-decoration: underline;
+    font-size: 40px;
+}
+
+.a-subcultura a{
+    color: #c4a1ff;
+}
+
+.a-subcultura a:hover{
+    color: #ffb3d9;
+}
+
+
+.a-subcultura .container .container-left p{
+    font-size: 20px;
+}
+
+.a-subcultura .container .container-right{
+    height: 100%;
+    width: 50%;
+    margin-left: 1%;
+}
+
+.a-subcultura .container .container-right img{
+    height: 102%;
+    width: 100%;
+}
+
+.esteticas{
+    display: flex;
+    flex-direction: column;
+    height: 500%;
+    width: 100%;
+    align-items: center;
+    margin-top: 2%;
+}
+
+.esteticas h2{
+    font-size: 40px;
+    text-decoration: underline;
+    font-family: 'Cinzel Decorative';
+}
+
+.esteticas p{
+    font-size: 20px;
+    text-align: center;
+}
+
+.vertente{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 2px solid #7b1339;
+    margin-bottom: 1%;
+}
+
+.vertente h3{
+    font-size: 30px;
+    text-decoration: underline;
+}
+
+.vertente p{
+    text-align: center;
+    font-size: 20px;
+}
+
+.vertente img {
+    width: 40%;
+    margin-top: 20px;
+    border-radius: 15px;
+}
+
+/* FIM DA SUBCULTURA */
+
+/* BANDAS */
+.generos {
+    display: flex;
+    flex-direction: column;
+    
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+.generos h2 {
+    font-family: "Cinzel Decorative", serif;
+    font-size: 30px;
+    text-decoration: underline;
+}
+
+.generos p {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 0;
+}
+
+.bandas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-direction: row;
+}
+
+.banda {
+    background-color: #222;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    border: 3px solid #7b1339;
+}
+
+.banda:hover{
+    transform: scale(1.10);
+    transition: transform 0.5s ease;
+}
+
+.banda img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.banda span {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.banda a {
+    color: #c4a1ff;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.banda a:hover {
+    color: #ffb3d9;
+}
+/* FIM DAS BANDAS */
+
+/* LOCAIS EM SP */
+.introducao{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.introducao h2{
+    font-size: 40px;
+    text-decoration: underline;
+}
+
+.introducao p{
+    font-size: 20px;
+}
+
+.locais .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    height: 100%;
+    width: 100%;
+    flex:1;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+.card-local{
+    display: flex;
+    flex-direction: column;
+    border: 3px solid #7b1339;
+    text-align: center;
+}
+
+.card-local:hover{
+    transform: scale(1.10);
+    transition: transform 0.5s ease;
+}
+
+.card-local h3{
+    font-size: 20px;
+    text-decoration: underline;
+    font-family: 'Cinzel Decorative';
+}
+
+.card-local p{
+    font-size: 18px;
+    text-align: center;
+}
+.card-local a{
+    font-size: 18px;
+    color: #c4a1ff;
+    text-align: center;
+}
+
+.card-local a:hover{
+    font-size: 18px;
+    color: #660022;
+    text-align: center;
+}
+/* FIM DOS LOCAIS EM SP */
+
+/* QUIZ */
+.introducaoQuiz{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.introducaoQuiz h1{
+    font-family: 'Cinzel Decorative';
+    font-size: 45px;
+    text-decoration: underline;
+    margin-bottom: 0;
+}
+
+.introducaoQuiz p{
+    font-size: 28px;
+}
+
+.quizGotico{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.botao-quiz{
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+}
+.quizGotico button{
+    border-radius: 15px;
+    background-color: #2e003e;
+    cursor: pointer;
+    color: #eaeaea;
+    font-size: 20px;
+}
+
+.quizGotico button:hover{
+    align-self: center;
+    cursor: pointer;
+    background-color: #c4a1ff;
+}
+
+
+.pergunta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pergunta h2{
+    text-decoration: underline;
+    font-size: 24px;
+}
+
+.pergunta span{
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+}
+
+
+/* FIM DO QUIZ */

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Qual banda gótica te representa?</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="./js/sessao.js"></script>
+    <link rel="icon" href="./assets/logo-sem-fundo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400;1,700&family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">  <!-- Fontes utilizadas -->
+</head>
+<body onload="validarSessao()">
+    <div class="header">
+        <div class="container">
+            <ul class="navbar">
+                <li>
+                    <a href="index.html"><img src="./assets/logo-sem-fundo.png" alt="Voltar Para a Página Inicial"></a>
+                </li>
+                <li>
+                    <a href="sobre-mim.html">Sobre Mim</a>
+                </li>
+                <li>
+                    <a href="subcultura.html">A Subcultura</a>
+                </li>
+                <li>
+                    <a href="bandas.html">Bandas</a>
+                </li>
+                <li>
+                    <a href="locais.html">Locais em SP</a>
+                </li>
+                <li>
+                    <a href="cadastro.html">Faça Seu Cadastro!</a>
+                </li>
+                <li>
+                    <a href="login.html">Login</a>
+                </li>
+                <li>
+                    <a href="#">Quiz</a>
+                </li>
+                <li>
+                    <a href="dashboard.html">Dashboard</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="introducaoQuiz">
+        <h1>Olá,<span id="b_usuario">usuário</span>! Qual banda gótica mais te representa?</h1>
+        <p>Responda as perguntas abaixo e descubra qual banda gótica mais combina com sua personalidade:</p>
+    </div>
+
+    <form id="quizGotico" class="quizGotico" style="display: block;">
+        <div class="pergunta">
+            <h2>1. Qual ambiente mais te representa?</h2>
+            <span><input type="radio" name="p1" value="A">Floresta sombria ou uma noite chuvosa</span>
+            <span><input type="radio" name="p1" value="B">Cemitério antigo</span>
+            <span><input type="radio" name="p1" value="C">Cidade grande à noite</span>
+            <span><input type="radio" name="p1" value="D">Sala com arte antiga</span>
+        </div>
+
+        <div class="pergunta">
+            <h2>2. Qual estética mais te atraiu?</h2>
+            <span><input type="radio" name="p2" value="A">Post-Punk clássico</span>
+            <span><input type="radio" name="p2" value="B">Industrial</span>
+            <span><input type="radio" name="p2" value="C">Romântica, gótica e melancólica</span>
+            <span><input type="radio" name="p2" value="D">Minimalista, fria e moderna</span>
+        </div> 
+
+        <div class="pergunta">
+            <h2>3. Qual estilo de vocal você prefere?</h2>
+            <span><input type="radio" name="p3" value="A">Gritado e visceral</span>
+            <span><input type="radio" name="p3" value="B">Frio, calmo e distante</span>
+            <span><input type="radio" name="p3" value="C">Grave e dramático</span>
+            <span><input type="radio" name="p3" value="D">Suave e emotivo / melancólico</span>
+        </div>
+
+        <div class="pergunta">
+            <h2>4. Qual dos instrumentos e características dos estilos te despertou interesse?</h2>
+            <span><input type="radio" name="p4" value="A">Sintetizadores psicodélicos e pulsantes</span>
+            <span><input type="radio" name="p4" value="B">Batidas dramáticas com atmosferas sombrias</span>
+            <span><input type="radio" name="p4" value="C">Guitarra com riffs calmos e distantes</span>
+            <span><input type="radio" name="p4" value="D">Baixo presente do Post-Punk</span>
+        </div> 
+
+        <div class="pergunta">
+            <h2>5. Como você lida com suas próprias emoções?</h2>
+            <span><input type="radio" name="p5" value="A">Por meio de confrontos, intensidade e caos</span>
+            <span><input type="radio" name="p5" value="B">Transformando em arte e na sua interpretação perante a emoção</span>
+            <span><input type="radio" name="p5" value="C">Guardando tudo para si</span>
+            <span><input type="radio" name="p5" value="D">Dançando</span>
+        </div>
+
+        <div class="pergunta">
+            <h2>6. Qual vertente musical te representa?</h2>
+            <span><input type="radio" name="p6" value="A">Post-Punk sombrio</span>
+            <span><input type="radio" name="p6" value="B">Darkwave melancólico</span>
+            <span><input type="radio" name="p6" value="C">Romântica e emocional</span>
+            <span><input type="radio" name="p6" value="D">Contemporânea</span>
+        </div>
+
+        <div class="pergunta">
+            <h2>7. Qual rolê descreve sua vibe?</h2>
+            <span><input type="radio" name="p7" value="A">Nevoeiro em uma vila distante</span>
+            <span><input type="radio" name="p7" value="B">Noite em uma ruína antiga</span>
+            <span><input type="radio" name="p7" value="C">Romance melancólico em um local gótico</span>
+            <span><input type="radio" name="p7" value="D">Ir a um museu para ver arte decadente e drama</span>
+        </div>
+
+        <div class="botao-quiz"><button>Qual banda gótica me representa?</button></div>
+    </form>
+    <h2 id="resultado"></h2>
+    <div class="footer">
+        <div>A Little Piece of My Soul — criado por Diego Henrique de Novais Menegaldo 🦇🍷🖤</div>
+    </div>
+</body>
+</html>
