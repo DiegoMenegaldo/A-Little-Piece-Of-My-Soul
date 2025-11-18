@@ -34,4 +34,7 @@ CREATE TABLE ResultadosQuiz(
     FOREIGN KEY (fkQuiz) REFERENCES Quiz(idQuiz)
 );
 
-GRANT INSERT ON alittlepieceofmysoul.* TO escritorgotico@localhost; 
+GRANT INSERT ON alittlepieceofmysoul.* TO escritorgotico@localhost;
+GRANT SELECT ON alittlepieceofmysoul.* TO escritorgotico@localhost; 
+FLUSH PRIVILEGES;
+SELECT * FROM Cadastro;
