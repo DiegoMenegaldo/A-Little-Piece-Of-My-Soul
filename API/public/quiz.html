@@ -9,7 +9,9 @@
     <link rel="icon" href="./assets/logo-sem-fundo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400;1,700&family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">  <!-- Fontes utilizadas -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400;1,700&family=Cinzel+Decorative:wght@400;700;900&display=swap"
+        rel="stylesheet"> <!-- Fontes utilizadas -->
 </head>
 <body onload="validarSessao()">
     <div class="header">
@@ -37,10 +39,13 @@
                     <a href="login.html">Login</a>
                 </li>
                 <li>
-                    <a href="#">Quiz</a>
+                    <a href="quiz.html">Quiz</a>
                 </li>
                 <li>
                     <a href="dashboard.html">Dashboard</a>
+                </li>
+                <li>
+                    <a onclick="limparSessao()" style="cursor: pointer;">Logoff</a>
                 </li>
             </ul>
         </div>
@@ -66,7 +71,7 @@
             <span><input type="radio" name="p2" value="B">Industrial</span>
             <span><input type="radio" name="p2" value="C">Romântica, gótica e melancólica</span>
             <span><input type="radio" name="p2" value="D">Minimalista, fria e moderna</span>
-        </div> 
+        </div>
 
         <div class="pergunta">
             <h2>3. Qual estilo de vocal você prefere?</h2>
@@ -82,12 +87,13 @@
             <span><input type="radio" name="p4" value="B">Batidas dramáticas com atmosferas sombrias</span>
             <span><input type="radio" name="p4" value="C">Guitarra com riffs calmos e distantes</span>
             <span><input type="radio" name="p4" value="D">Baixo presente do Post-Punk</span>
-        </div> 
+        </div>
 
         <div class="pergunta">
             <h2>5. Como você lida com suas próprias emoções?</h2>
             <span><input type="radio" name="p5" value="A">Por meio de confrontos, intensidade e caos</span>
-            <span><input type="radio" name="p5" value="B">Transformando em arte e na sua interpretação perante a emoção</span>
+            <span><input type="radio" name="p5" value="B">Transformando em arte e na sua interpretação perante a
+                emoção</span>
             <span><input type="radio" name="p5" value="C">Guardando tudo para si</span>
             <span><input type="radio" name="p5" value="D">Dançando</span>
         </div>
@@ -108,140 +114,142 @@
             <span><input type="radio" name="p7" value="D">Ir a um museu para ver arte decadente e drama</span>
         </div>
 
-        <div class="botao-quiz"><button onclick="verResultado()" type="button">Qual banda gótica me representa?</button></div>
+        <div class="botao-quiz"><button onclick="verResultado()" type="button">Qual banda gótica me representa?</button>
+        </div>
     </form>
     <div id="div_resultado"></div>
     <div class="footer">
         <div>A Little Piece of My Soul — criado por Diego Henrique de Novais Menegaldo 🦇🍷🖤</div>
     </div>
 </body>
+
 </html>
 <script>
-function verResultado() {
+    function verResultado() {
 
-    var resultado = document.getElementById("div_resultado");
-    var quiz = document.getElementById("quizGotico");
+        var resultado = document.getElementById("div_resultado");
+        var quiz = document.getElementById("quizGotico");
 
-    // Armazena as respostas no vetor e verifica se todas as inputs foram marcadas
-    var respostas = [];
-    for (var i = 1; i <= 7; i++) {
-        var marcada = document.querySelector("input[name='p" + i + "']:checked");
-        if (!marcada) {
-            alert("Responda todas as perguntas!");
-            return;
+        // Armazena as respostas no vetor e verifica se todas as inputs foram marcadas
+        var respostas = [];
+        for (var i = 1; i <= 7; i++) {
+            var marcada = document.querySelector("input[name='p" + i + "']:checked");
+            if (!marcada) {
+                alert("Responda todas as perguntas!");
+                return;
+            }
+            respostas.push(marcada.value);
         }
-        respostas.push(marcada.value);
-    }
 
-    // Início da contagem de bandas
-    var contagem = {};
+        // Início da contagem de bandas
+        var contagem = {};
 
-    function pontuar(banda) {
-        if (!contagem[banda]) contagem[banda] = 0;
-        contagem[banda]++;
-    }
-
-    // Pergunta 1 índice 0, chama a função pontuar com parâmetro a banda 
-    if (respostas[0] == "A") { pontuar("HIM"); pontuar("London After Midnight"); }
-    else if (respostas[0] == "B") { pontuar("Christian Death"); pontuar("Bauhaus"); }
-    else if (respostas[0] == "C") { pontuar("She Wants Revenge"); pontuar("Ultra Sunn"); }
-    else if (respostas[0] == "D") { pontuar("The Cure"); pontuar("Siouxsie and The Banshees"); }
-
-    // ------------ PERGUNTA 2 ------------
-    if (respostas[1] == "A") { pontuar("Bauhaus"); pontuar("The Sisters of Mercy"); }
-    else if (respostas[1] == "B") { pontuar("Qual"); pontuar("Ultra Sunn"); }
-    else if (respostas[1] == "C") { pontuar("London After Midnight"); pontuar("HIM"); }
-    else if (respostas[1] == "D") { pontuar("Lebanon Hanover"); pontuar("Pink Turns Blue"); }
-
-    // ------------ PERGUNTA 3 ------------
-    if (respostas[2] == "A") { pontuar("Christian Death"); pontuar("Qual"); }
-    else if (respostas[2] == "B") { pontuar("The Cure"); pontuar("Twin Tribes"); }
-    else if (respostas[2] == "C") { pontuar("The Sisters of Mercy"); pontuar("Bauhaus"); }
-    else if (respostas[2] == "D") { pontuar("She Past Away"); pontuar("Lebanon Hanover"); }
-
-    // ------------ PERGUNTA 4 ------------
-    if (respostas[3] == "A") { pontuar("Twin Tribes"); pontuar("Ultra Sunn"); }
-    else if (respostas[3] == "B") { pontuar("London After Midnight"); pontuar("She Wants Revenge"); }
-    else if (respostas[3] == "C") { pontuar("She Past Away"); pontuar("Lebanon Hanover"); }
-    else if (respostas[3] == "D") { pontuar("The Cure"); pontuar("Pink Turns Blue"); }
-
-    // ------------ PERGUNTA 5 ------------
-    if (respostas[4] == "A") { pontuar("Christian Death"); pontuar("Qual"); }
-    else if (respostas[4] == "B") { pontuar("Siouxsie and The Banshees"); pontuar("The Cure"); }
-    else if (respostas[4] == "C") { pontuar("Lebanon Hanover"); pontuar("Pink Turns Blue"); }
-    else if (respostas[4] == "D") { pontuar("Ultra Sunn"); pontuar("Twin Tribes"); }
-
-    // ------------ PERGUNTA 6 ------------
-    if (respostas[5] == "A") { pontuar("The Sisters of Mercy"); pontuar("Bauhaus"); }
-    else if (respostas[5] == "B") { pontuar("Ultra Sunn"); pontuar("She Past Away"); }
-    else if (respostas[5] == "C") { pontuar("HIM"); pontuar("London After Midnight"); }
-    else if (respostas[5] == "D") { pontuar("She Wants Revenge"); pontuar("Pink Turns Blue"); }
-
-    // ------------ PERGUNTA 7 ------------
-    if (respostas[6] == "A") { pontuar("She Wants Revenge"); pontuar("Ultra Sunn"); }
-    else if (respostas[6] == "B") { pontuar("The Sisters of Mercy"); pontuar("She Past Away"); }
-    else if (respostas[6] == "C") { pontuar("Christian Death"); pontuar("London After Midnight"); }
-    else if (respostas[6] == "D") { pontuar("HIM"); pontuar("The Cure"); }
-
-    // Encontra a banda com maior pontuação
-    var bandaFinal = "";
-    var maior = -1;
-
-    for (var banda in contagem) {
-        if (contagem[banda] > maior) {
-            maior = contagem[banda];
-            bandaFinal = banda;
+        function pontuar(banda) {
+            if (!contagem[banda]) contagem[banda] = 0;
+            contagem[banda]++;
         }
-    }
 
-    var mensagem = '';
-    var imagem = '';
+        // Pergunta 1 índice 0, chama a função pontuar com parâmetro a banda 
+        if (respostas[0] == "A") { pontuar("HIM"); pontuar("London After Midnight"); }
+        else if (respostas[0] == "B") { pontuar("Christian Death"); pontuar("Bauhaus"); }
+        else if (respostas[0] == "C") { pontuar("She Wants Revenge"); pontuar("Ultra Sunn"); }
+        else if (respostas[0] == "D") { pontuar("The Cure"); pontuar("Siouxsie and The Banshees"); }
 
-    if(bandaFinal == 'Lebanon Hanover'){
-        texto = `Você é introspectivo, sensível e aprecia atmosférias melancólicas, frias e rejeita a modernida, TRISTEZA É REBELIÃO!`
-        imagem = './assets/lebanonhanover.jpeg'
-    } else if(bandaFinal == 'HIM'){
-        texto = `Você possui um coração romântico, recoberto em sombras, amor, dor e paixão formam sua identidade, o drama gótico é vivido em você!`
-        imagem = './assets/HIM.jpg'
-    }else if(bandaFinal == 'Bauhaus'){
-        texto = `Buscando sempre o incomum, o estranho e provocador, sua vibe exala teatralidade, experimentação e o gótico tradicional.`
-        imagem = './assets/bauhaus.jpg'
-    }else if(bandaFinal == 'She Past Away'){
-        texto = `Carregado de uma aura fria e misteriosa, suas emoções são expressas por meio do silêncio e olhares, somente pelo que o Darkwave turco pode propor!`
-        imagem = './assets/shepast.jpg'
-    }
-    else if(bandaFinal == 'London After Midnight'){
-        texto = `Uma alma intensa, emocional e crítica. Um espírito inquieto que tem muito amor dentro, busca sempre o melhor nas pessoas.`
-        imagem = './assets/lam.jpg'
-    }else if(bandaFinal == 'Siouxsie and the Banshees'){
-        texto = `Você é uma pessoa de atitude e de identidade própria. Muitas vezes alguém ousado e caótico, porém extremamente expressivo!`
-        imagem = './assets/siouxsie.jpg'
-    }else if(bandaFinal == 'The Sisters of Mercy'){
-        texto = `Alguém enigmático e carregado de presença (aura), a estética dark e postura fria combinam muito com sua pessoa.`
-        imagem = './assets/sisters.jpg'
-    }else if(bandaFinal == 'The Cure'){
-        texto = `Melancólico e sonhador. Você sente o mundo profundamente, enxerga beleza em tudo, até nas pequenas coisas. Você é alguém gentil e uma ótima amizade para quem está a sua volta.`
-        imagem = './assets/thecure.jpg'
-    }else if(bandaFinal == 'Christian Death'){
-        texto = `Você é um gótico raiz, provocador e sem medo dos tabus impostos, você ama viver a arte como forma de expressão profunda da sua alma sombria.`
-        imagem = './assets/christian.jpg'
-    }else if(bandaFinal == 'Qual'){
-        texto = `Sua alma conversa com atmosferas densas, assim como os vocais do industral, sua alma é vibrante e transforma sua própria angústia em estética.`
-        imagem = './assets/qual.jpg'
-    }else if(bandaFinal == 'Twin Tribes'){
-        texto = `Você é alguém nostálgico (o oposto do Lebanon Hanover, pois Sadness Is Rebellion cita que nostalgia é negação), você curte atmosferas suaves, com um sintetizador tocando de fundo.`
-        imagem = './assets/twin.jpg'
-    }else if(bandaFinal == 'Ultra Sunn'){
-        texto = `Sua alma é dançante, uma mescla de sombria com enérgica.`
-        imagem = './assets/ultrasunn.jpg'
-    }else if(bandaFinal == 'Pink Turns Blue'){
-        texto = `Você carrega um espírito melancólico, porém muito resiliente. Mesmo na escuridão, você consegue encontrar força emocional e esperança.`
-        imagem = './assets/pink.jpg'
-    }else{
-        texto = `Você possui uma alma urbana, fria, porém elegante. Carrega um ar de mistério, desejo, melancolia e tensão emocional. Sua estética moderna nunca perde a classe.`
-        imagem = './assets/shewants.jpg'
-    }
-    resultado.innerHTML = `
+        // ------------ PERGUNTA 2 ------------
+        if (respostas[1] == "A") { pontuar("Bauhaus"); pontuar("The Sisters of Mercy"); }
+        else if (respostas[1] == "B") { pontuar("Qual"); pontuar("Ultra Sunn"); }
+        else if (respostas[1] == "C") { pontuar("London After Midnight"); pontuar("HIM"); }
+        else if (respostas[1] == "D") { pontuar("Lebanon Hanover"); pontuar("Pink Turns Blue"); }
+
+        // ------------ PERGUNTA 3 ------------
+        if (respostas[2] == "A") { pontuar("Christian Death"); pontuar("Qual"); }
+        else if (respostas[2] == "B") { pontuar("The Cure"); pontuar("Twin Tribes"); }
+        else if (respostas[2] == "C") { pontuar("The Sisters of Mercy"); pontuar("Bauhaus"); }
+        else if (respostas[2] == "D") { pontuar("She Past Away"); pontuar("Lebanon Hanover"); }
+
+        // ------------ PERGUNTA 4 ------------
+        if (respostas[3] == "A") { pontuar("Twin Tribes"); pontuar("Ultra Sunn"); }
+        else if (respostas[3] == "B") { pontuar("London After Midnight"); pontuar("She Wants Revenge"); }
+        else if (respostas[3] == "C") { pontuar("She Past Away"); pontuar("Lebanon Hanover"); }
+        else if (respostas[3] == "D") { pontuar("The Cure"); pontuar("Pink Turns Blue"); }
+
+        // ------------ PERGUNTA 5 ------------
+        if (respostas[4] == "A") { pontuar("Christian Death"); pontuar("Qual"); }
+        else if (respostas[4] == "B") { pontuar("Siouxsie and The Banshees"); pontuar("The Cure"); }
+        else if (respostas[4] == "C") { pontuar("Lebanon Hanover"); pontuar("Pink Turns Blue"); }
+        else if (respostas[4] == "D") { pontuar("Ultra Sunn"); pontuar("Twin Tribes"); }
+
+        // ------------ PERGUNTA 6 ------------
+        if (respostas[5] == "A") { pontuar("The Sisters of Mercy"); pontuar("Bauhaus"); }
+        else if (respostas[5] == "B") { pontuar("Ultra Sunn"); pontuar("She Past Away"); }
+        else if (respostas[5] == "C") { pontuar("HIM"); pontuar("London After Midnight"); }
+        else if (respostas[5] == "D") { pontuar("She Wants Revenge"); pontuar("Pink Turns Blue"); }
+
+        // ------------ PERGUNTA 7 ------------
+        if (respostas[6] == "A") { pontuar("She Wants Revenge"); pontuar("Ultra Sunn"); }
+        else if (respostas[6] == "B") { pontuar("The Sisters of Mercy"); pontuar("She Past Away"); }
+        else if (respostas[6] == "C") { pontuar("Christian Death"); pontuar("London After Midnight"); }
+        else if (respostas[6] == "D") { pontuar("HIM"); pontuar("The Cure"); }
+
+        // Encontra a banda com maior pontuação
+        var bandaFinal = "";
+        var maior = -1;
+
+        for (var banda in contagem) {
+            if (contagem[banda] > maior) {
+                maior = contagem[banda];
+                bandaFinal = banda;
+            }
+        }
+
+        var mensagem = '';
+        var imagem = '';
+
+        if (bandaFinal == 'Lebanon Hanover') {
+            texto = `Você é introspectivo, sensível e aprecia atmosférias melancólicas, frias e rejeita a modernida, TRISTEZA É REBELIÃO!`
+            imagem = './assets/lebanonhanover.jpeg'
+        } else if (bandaFinal == 'HIM') {
+            texto = `Você possui um coração romântico, recoberto em sombras, amor, dor e paixão formam sua identidade, o drama gótico é vivido em você!`
+            imagem = './assets/HIM.jpg'
+        } else if (bandaFinal == 'Bauhaus') {
+            texto = `Buscando sempre o incomum, o estranho e provocador, sua vibe exala teatralidade, experimentação e o gótico tradicional.`
+            imagem = './assets/bauhaus.jpg'
+        } else if (bandaFinal == 'She Past Away') {
+            texto = `Carregado de uma aura fria e misteriosa, suas emoções são expressas por meio do silêncio e olhares, somente pelo que o Darkwave turco pode propor!`
+            imagem = './assets/shepast.jpg'
+        }
+        else if (bandaFinal == 'London After Midnight') {
+            texto = `Uma alma intensa, emocional e crítica. Um espírito inquieto que tem muito amor dentro, busca sempre o melhor nas pessoas.`
+            imagem = './assets/lam.jpg'
+        } else if (bandaFinal == 'Siouxsie and the Banshees') {
+            texto = `Você é uma pessoa de atitude e de identidade própria. Muitas vezes alguém ousado e caótico, porém extremamente expressivo!`
+            imagem = './assets/siouxsie.jpg'
+        } else if (bandaFinal == 'The Sisters of Mercy') {
+            texto = `Alguém enigmático e carregado de presença (aura), a estética dark e postura fria combinam muito com sua pessoa.`
+            imagem = './assets/sisters.jpg'
+        } else if (bandaFinal == 'The Cure') {
+            texto = `Melancólico e sonhador. Você sente o mundo profundamente, enxerga beleza em tudo, até nas pequenas coisas. Você é alguém gentil e uma ótima amizade para quem está a sua volta.`
+            imagem = './assets/thecure.jpg'
+        } else if (bandaFinal == 'Christian Death') {
+            texto = `Você é um gótico raiz, provocador e sem medo dos tabus impostos, você ama viver a arte como forma de expressão profunda da sua alma sombria.`
+            imagem = './assets/christian.jpg'
+        } else if (bandaFinal == 'Qual') {
+            texto = `Sua alma conversa com atmosferas densas, assim como os vocais do industral, sua alma é vibrante e transforma sua própria angústia em estética.`
+            imagem = './assets/qual.jpg'
+        } else if (bandaFinal == 'Twin Tribes') {
+            texto = `Você é alguém nostálgico (o oposto do Lebanon Hanover, pois Sadness Is Rebellion cita que nostalgia é negação), você curte atmosferas suaves, com um sintetizador tocando de fundo.`
+            imagem = './assets/twin.jpg'
+        } else if (bandaFinal == 'Ultra Sunn') {
+            texto = `Sua alma é dançante, uma mescla de sombria com enérgica.`
+            imagem = './assets/ultrasunn.jpg'
+        } else if (bandaFinal == 'Pink Turns Blue') {
+            texto = `Você carrega um espírito melancólico, porém muito resiliente. Mesmo na escuridão, você consegue encontrar força emocional e esperança.`
+            imagem = './assets/pink.jpg'
+        } else {
+            texto = `Você possui uma alma urbana, fria, porém elegante. Carrega um ar de mistério, desejo, melancolia e tensão emocional. Sua estética moderna nunca perde a classe.`
+            imagem = './assets/shewants.jpg'
+        }
+        resultado.innerHTML = `
         <center style="font-size:30px; margin-top:20px;">
             🦇 A banda gótica que mais te representa é:<br><br>
             <b>${bandaFinal}</b>
@@ -252,18 +260,51 @@ function verResultado() {
         </center>
     `;
 
-    quiz.style.display = "none";
-    resultado.style.display = "block";
+        quiz.style.display = "none";
+        resultado.style.display = "block";
 
-    document.getElementById("refazerQuiz").onclick = function () {
-        resultado.style.display = "none";
-        quiz.style.display = "block";
+        document.getElementById("refazerQuiz").onclick = function () {
+            resultado.style.display = "none";
+            quiz.style.display = "block";
 
-        var radios = document.querySelectorAll("input[type='radio']");
-        for (var i = 0; i < radios.length; i++) {
-            radios[i].checked = false
+            var radios = document.querySelectorAll("input[type='radio']");
+            for (var i = 0; i < radios.length; i++) {
+                radios[i].checked = false
+            }
+        };
+        const p1 = respostas[0];
+        const p2 = respostas[1];
+        const p3 = respostas[2];
+        const p4 = respostas[3];
+        const p5 = respostas[4];
+        const p6 = respostas[5];
+        const p7 = respostas[6];
+        if (sessionStorage.NOME_USUARIO == undefined) {
+            alert(`Essas informações não serão salvas no banco, faça login para salvá-las`)
+            return;
+        } else {
+            fetch("/quiz/inserirPerguntas", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    p1, p2, p3, p4, p5, p6, p7
+                })
+            }).then(res => res.json())
+                .then(json => {
+                    const fkQuiz = json.idQuizNovo;
+                    fetch("/quiz/inserirResultado", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            fkCadastro: sessionStorage.ID_USUARIO,
+                            fkQuiz: fkQuiz,
+                            resultado: bandaFinal
+                        })
+                    });
+
+                });
         }
-    };
-}
+    }
 </script>
-

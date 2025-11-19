@@ -33,7 +33,7 @@
                     <a href="locais.html">Locais em SP</a>
                 </li>
                 <li>
-                    <a href="#">Faça Seu Cadastro!</a>
+                    <a href="cadastro.html">Faça Seu Cadastro!</a>
                 </li>
                 <li>
                     <a href="login.html">Login</a>
@@ -44,10 +44,12 @@
                 <li>
                     <a href="dashboard.html">Dashboard</a>
                 </li>
+                <li>
+                    <a onclick="limparSessao()" style="cursor: pointer;">Logoff</a>
+                </li>
             </ul>
         </div>
     </div>
-
   <!-- <div class="login">
     <div class="alerta_erro">
       <div class="card_erro" id="cardErro">
@@ -170,9 +172,6 @@
 </body>
 </html>
 <script>
-  // Array para armazenar empresas cadastradas para validação de código de ativação 
-  let listaEmpresasCadastradas = [];
-
   function cadastrar() {
     // aguardar();
 
@@ -208,18 +207,22 @@
 
     if(nomeTamanho <= 1){
       alert(`O nome deve ter mais de 1 caractere`)
+      return;
     }
 
     if(emailVar.includes(temArroba) == false || emailVar.includes(temPonto) == false){
-      alert(`Verifique se o email tem @ ou .`)
+      alert(`Verifique se o email tem @ ou .`);
+      return;
     }
 
     if (senhaTamanho <= 6){
       alert(`A senha deve ter mais de 6 caracteres`)
+      return;
     }
 
      if (senhaConfirmacaoTamanho <= 6){
       alert(`A confirmação da senha tem que ter mais de 6 caracteres`)
+      return;
     }
 
     if (senhaVar != confirmacaoSenhaVar){

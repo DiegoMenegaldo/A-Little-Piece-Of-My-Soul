@@ -9,6 +9,6 @@ router.post("/inserirResultado", function (req, res) {
 
 router.post("/inserirPerguntas", function (req, res) {
     quizController.inserirPerguntas(req, res);
-})
+});
 
 module.exports = router;
