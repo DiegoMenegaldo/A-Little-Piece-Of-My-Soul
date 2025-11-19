@@ -25,11 +25,12 @@ CREATE TABLE Quiz(
 );
 
 CREATE TABLE ResultadosQuiz(
-	fkCadastro INT,
+	idResultado INT,
+    fkCadastro INT,
     fkQuiz INT,
     resultado VARCHAR(45) NOT NULL,
     dtResultado DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY(fkCadastro, fkQuiz),
+    PRIMARY KEY(idResultado, fkCadastro, fkQuiz),
     FOREIGN KEY (fkCadastro) REFERENCES Cadastro(idCadastro),
     FOREIGN KEY (fkQuiz) REFERENCES Quiz(idQuiz)
 );
@@ -38,3 +39,4 @@ GRANT INSERT ON alittlepieceofmysoul.* TO escritorgotico@localhost;
 GRANT SELECT ON alittlepieceofmysoul.* TO escritorgotico@localhost; 
 FLUSH PRIVILEGES;
 SELECT * FROM Cadastro;
+
