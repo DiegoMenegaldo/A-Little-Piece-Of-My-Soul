@@ -1,9 +1,6 @@
-// var medidaModel = require("../models/medidaModel");
+// var quizModel = require("../models/quizModel");
 
-// function buscarUltimasMedidas(req, res) {
-
-//     const limite_linhas = 7;
-
+// function inserirResultado(req, res) {
 //     var idAquario = req.params.idAquario;
 
 //     console.log(`Recuperando as ultimas ${limite_linhas} medidas`);
@@ -42,7 +39,7 @@
 // }
 
 // module.exports = {
-//     buscarUltimasMedidas,
-//     buscarMedidasEmTempoReal
+//     inserirResultado,
+//     inserirPerguntas
 
 // }

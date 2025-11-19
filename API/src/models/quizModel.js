@@ -1,35 +1,24 @@
 var database = require("../database/config");
 
-function buscarUltimasMedidas(idAquario, limite_linhas) {
+function inserirResultado(fkCadastro, fkQuiz, resultado) {
 
-    var instrucaoSql = `SELECT 
-        dht11_temperatura as temperatura, 
-        dht11_umidade as umidade,
-                        momento,
-                        DATE_FORMAT(momento,'%H:%i:%s') as momento_grafico
-                    FROM medida
-                    WHERE fk_aquario = ${idAquario}
-                    ORDER BY id DESC LIMIT ${limite_linhas}`;
+    var instrucaoSql = `INSERT INTO ResultadosQuiz(fkCadastro, fkQuiz, resultado, dtResultado) VALUES
+    ('${fkCadastro}', '${fkQuiz}', '${resultado})`;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
 
-function buscarMedidasEmTempoReal(idAquario) {
+function inserirPerguntas(p1, p2, p3, p4, p5, p6, p7) {
 
-    var instrucaoSql = `SELECT 
-        dht11_temperatura as temperatura, 
-        dht11_umidade as umidade,
-                        DATE_FORMAT(momento,'%H:%i:%s') as momento_grafico, 
-                        fk_aquario 
-                        FROM medida WHERE fk_aquario = ${idAquario} 
-                    ORDER BY id DESC LIMIT 1`;
+    var instrucaoSql = `INSERT INTO Quiz (p1, p2, p3, p4, p5, p6, p7) VALUES
+    ('${p1}','${p2}', '${p3}', '${p4}', '${p5}', '${p6}', '${p7}')`;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
 
 module.exports = {
-    buscarUltimasMedidas,
-    buscarMedidasEmTempoReal
+    inserirResultado,
+    inserirPerguntas
 }

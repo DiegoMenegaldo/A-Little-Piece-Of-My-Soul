@@ -1,14 +1,14 @@
 var express = require("express");
 var router = express.Router();
 
-var medidaController = require("../controllers/quizController");
+var quizController = require("../controllers/quizController");
 
 router.post("/inserirResultado", function (req, res) {
-    medidaController.buscarUltimasMedidas(req, res);
+    quizController.inserirResultado(req, res);
 });
 
 router.post("/inserirPerguntas", function (req, res) {
-    medidaController.buscarMedidasEmTempoReal(req, res);
+    quizController.inserirPerguntas(req, res);
 })
 
 module.exports = router;
