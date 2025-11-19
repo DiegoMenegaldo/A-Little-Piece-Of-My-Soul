@@ -122,7 +122,7 @@ function verResultado() {
     var resultado = document.getElementById("div_resultado");
     var quiz = document.getElementById("quizGotico");
 
-    // Coleta respostas
+    // Armazena as respostas no vetor e verifica se todas as inputs foram marcadas
     var respostas = [];
     for (var i = 1; i <= 7; i++) {
         var marcada = document.querySelector("input[name='p" + i + "']:checked");
@@ -133,7 +133,7 @@ function verResultado() {
         respostas.push(marcada.value);
     }
 
-    // Contagem simples
+    // Início da contagem de bandas
     var contagem = {};
 
     function pontuar(banda) {
@@ -141,7 +141,7 @@ function verResultado() {
         contagem[banda]++;
     }
 
-    // ------------ PERGUNTA 1 ------------
+    // Pergunta 1 índice 0, chama a função pontuar com parâmetro a banda 
     if (respostas[0] == "A") { pontuar("HIM"); pontuar("London After Midnight"); }
     else if (respostas[0] == "B") { pontuar("Christian Death"); pontuar("Bauhaus"); }
     else if (respostas[0] == "C") { pontuar("She Wants Revenge"); pontuar("Ultra Sunn"); }
