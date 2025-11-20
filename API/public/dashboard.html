@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Little Piece Of My Soul - Dashboard</title>
     <link rel="stylesheet" href="./style/style.css">
+    <script src="./js/sessao.js"></script>
     <link rel="icon" href="./assets/logo-sem-fundo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400;1,700&family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">  <!-- Fontes utilizadas -->
 </head>
-<body>
+<body onload="validarSessao()">
     <div class="header">
         <div class="container">
             <ul class="navbar">
@@ -46,6 +47,9 @@
                 </li>
             </ul>
         </div>
+    </div>
+    <div class="introducaoQuiz">
+        <h1>Olá,<span id="b_usuario">usuário,</span>. Confira os dados de outros usuários que fizeram cadastro e o quiz!</p>
     </div>
 
     <div class="footer">

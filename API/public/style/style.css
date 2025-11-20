@@ -310,6 +310,14 @@ body {
     border-radius: 15px;
 }
 
+.campo select {
+    display: flex;
+    width: 80%;
+    margin-bottom: 1%;
+    font-size: 20px;
+    border-radius: 15px;
+}
+
 .card-cadastro h2 {
     text-decoration: underline;
     font-size: 40px;

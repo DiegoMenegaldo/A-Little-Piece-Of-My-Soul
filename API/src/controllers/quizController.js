@@ -20,7 +20,6 @@ function inserirPerguntas(req, res) {
     quizModel.inserirPerguntas(p1, p2, p3, p4, p5, p6, p7)
         .then(resultado => {
             console.log("Resultado do INSERT:", resultado);
-
             const idQuiz = resultado.insertId;
             res.status(200).json({
                 success: true,
