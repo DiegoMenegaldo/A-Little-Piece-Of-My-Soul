@@ -40,3 +40,27 @@ GRANT SELECT ON alittlepieceofmysoul.* TO escritorgotico@localhost;
 FLUSH PRIVILEGES;
 select * from ResultadosQuiz;
 select * from quiz;
+select * from cadastro;
+drop table resultadosquiz;
+
+CREATE VIEW vw_kpis AS 
+SELECT
+            (SELECT 
+				COUNT(idCadastro) FROM Cadastro) AS qtdCadastro,
+            
+            (SELECT 
+				COUNT(idResultado) FROM ResultadosQuiz) AS qtdResposta,
+            
+            (SELECT 
+				resultado FROM ResultadosQuiz GROUP BY resultado ORDER BY COUNT(*) DESC LIMIT 1 ) AS maisSorteada,
+            
+            (SELECT 
+				resultado FROM ResultadosQuiz GROUP BY resultado ORDER BY COUNT(*) ASC LIMIT 1) AS menosSorteada,
+            
+            (SELECT 
+				generoFavorito FROM Cadastro GROUP BY generoFavorito ORDER BY COUNT(*) DESC LIMIT 1) AS generoEscolhido,
+            
+            (SELECT 
+				bandaFavorita FROM Cadastro GROUP BY bandaFavorita ORDER BY COUNT(*) DESC LIMIT 1) AS bandaEscolhida;
+
+select * from vw_kpis;

@@ -10,6 +10,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400;1,700&family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">  <!-- Fontes utilizadas -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body onload="validarSessao()">
     <div class="header">
@@ -48,8 +52,36 @@
             </ul>
         </div>
     </div>
-    <div class="introducaoQuiz">
-        <h1>Olá,<span id="b_usuario">usuário,</span>. Confira os dados de outros usuários que fizeram cadastro e o quiz!</p>
+    <div class="introducaoDash">
+        <h1 style="text-align: center;">Olá,<span id="b_usuario">usuário,</span>. Confira os dados de outros usuários que fizeram cadastro e o quiz!</p>
+    </div>
+
+    <div class="dashboard">
+        <div class="container">
+            <div class="containerKpi">
+                <div class="kpi">
+                    Quantidade de cadastros: <p id="qtdCadastro"></p>
+                </div>
+                <div class="kpi">
+                    Quantidade de respostas no Quiz: <p id="qtdResposta"></p>
+                </div>
+                <div class="kpi">
+                    Banda mais sorteada <p id="maisSorteada"></p>
+                </div>
+                <div class="kpi">
+                    Banda menos sorteada <p id="menosSorteada"></p>
+                </div>
+                <div class="kpi">
+                    Gênero mais escolhido <p id="generoEscolhido"></p>
+                </div>
+                <div class="kpi">
+                    Banda favorita mais escolhida <p id="bandaEscolhida"></p>
+                </div>
+            </div>
+            <div class="containerGrafico">
+
+            </div>
+        </div>
     </div>
 
     <div class="footer">
@@ -57,3 +89,34 @@
     </div>
 </body>
 </html>
+<script>
+    // Esse é o fetch para as kpis serem exibidas na tela:
+    // fetch("/dashboard/kpis")
+    //     .then(res => res.json())
+    //     .then(json =>{
+    //         const kpis = json[0];
+    //         qtdCadastro.innerHTML = kpis.qtdCadastro;
+    //         qtdResposta.innerHTML = kpis.qtdResposta;
+    //         maisSorteada.innerHTML = kpis.maisSorteada;
+    //         menosSorteada.innerHTML = kpis.menosSorteada;
+    //         generoEscolhido.innerHTML = kpis.generoEscolhido;
+    //         bandaEscolhida.innerHTML = kpis.bandaEscolhida;
+    //     });
+
+    fetch("/dashboard/kpis",{
+        method: "GET",
+        headers: {
+            "Content-type": "application/json"
+        }
+    })
+    .then(res => res.json())
+    .then(listaKpis =>{
+        const kpis = listaKpis[0];
+            qtdCadastro.innerHTML = kpis.qtdCadastro;
+            qtdResposta.innerHTML = kpis.qtdResposta;
+            maisSorteada.innerHTML = kpis.maisSorteada;
+            menosSorteada.innerHTML = kpis.menosSorteada;
+            generoEscolhido.innerHTML = kpis.generoEscolhido;
+            bandaEscolhida.innerHTML = kpis.bandaEscolhida;
+    })
+</script>
