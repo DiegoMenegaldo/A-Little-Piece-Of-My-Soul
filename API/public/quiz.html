@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,7 @@
         href="https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400;1,700&family=Cinzel+Decorative:wght@400;700;900&display=swap"
         rel="stylesheet"> <!-- Fontes utilizadas -->
 </head>
+
 <body onload="validarSessao()">
     <div class="header">
         <div class="container">
@@ -133,7 +135,7 @@
         // Armazena as respostas no vetor e verifica se todas as inputs foram marcadas
         var respostas = [];
         for (var i = 1; i <= 7; i++) {
-            var marcada = document.querySelector("input[name='p" + i + "']:checked");
+            var marcada = document.querySelector("input[name='p" + i + "']:checked"); // Captura as inputs com name p e concatena com o valor de i, verificando se todas foram marcadas
             if (!marcada) {
                 alert("Responda todas as perguntas!");
                 return;
@@ -142,11 +144,22 @@
         }
 
         // Início da contagem de bandas
-        var contagem = {};
+        var bandas = [
+            "HIM", "London After Midnight", "Christian Death", "Bauhaus",
+            "She Wants Revenge", "Ultra Sunn", "The Cure", "Siouxsie and The Banshees",
+            "The Sisters of Mercy", "Qual", "Lebanon Hanover", "Pink Turns Blue",
+            "Twin Tribes", "She Past Away"
+        ];
 
-        function pontuar(banda) {
-            if (!contagem[banda]) contagem[banda] = 0;
-            contagem[banda]++;
+        var contagem = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+
+        function pontuar(nome) {
+            for (var i = 0; i < bandas.length; i++) {
+                if (bandas[i] == nome) { // se bandas na posição i == ela mesma, tipo bandas[0] == 'HIM' == TRUE, isso pelo valor das inputs do tipo radio declaradas no html
+                    contagem[i]++; // Então, se 
+                }
+            }
         }
 
         // Pergunta 1 índice 0, chama a função pontuar com parâmetro a banda 
@@ -195,84 +208,86 @@
         var bandaFinal = "";
         var maior = -1;
 
-        for (var banda in contagem) {
-            if (contagem[banda] > maior) {
-                maior = contagem[banda];
-                bandaFinal = banda;
+        // Verifica o vetor todo, sempre atribui o valor do maior se verificar que o valor na posição i for maior que o valor padrão da variável maior, reatribuindo os valores chega no resultado final
+        for (var i = 0; i < contagem.length; i++) {
+            if (contagem[i] > maior) {
+                maior = contagem[i];
+                bandaFinal = bandas[i];
             }
         }
+        // começa com -1 pois toda banda tem a pontuação zero, logo nenhuma pode ser menor que 0, mas pode ser igual a 0
 
-        var mensagem = '';
+        var mensagemBanda = '';
         var imagem = '';
 
         if (bandaFinal == 'Lebanon Hanover') {
-            texto = `Você é introspectivo, sensível e aprecia atmosféricas melancólicas, frias e rejeita a modernidade, TRISTEZA É REBELIÃO!<br>
+            mensagemBanda = `Você é introspectivo, sensível e aprecia atmosféricas melancólicas, frias e rejeita a modernidade, TRISTEZA É REBELIÃO!<br>
             <a href="https://youtu.be/WPw7nlluRdc?si=iiY1CWlsbhBsvJbg" target="_blank">Ouça Lebanon Hanover - Gallowdance</a><br>
             <a href="dashboard.html"> Acesse a Dashboard e CONFIRA seus resultados com outros usuários!</a>`
             imagem = './assets/lebanonhanover.jpeg'
         } else if (bandaFinal == 'HIM') {
-            texto = `Você possui um coração romântico, recoberto em sombras, amor, dor e paixão formam sua identidade, o drama gótico é vivido em você!<br>
+            mensagemBanda = `Você possui um coração romântico, recoberto em sombras, amor, dor e paixão formam sua identidade, o drama gótico é vivido em você!<br>
             <a href="https://youtu.be/aUUSz54G6jc?si=-3_v04m99pTqGCA_">Ouça HIM - Wings of a Butterfly</a><br>
             <a href="dashboard.html"> Acesse a Dashboard e CONFIRA seus resultados com outros usuários!</a>`
             imagem = './assets/HIM.jpg'
         } else if (bandaFinal == 'Bauhaus') {
-            texto = `Buscando sempre o incomum, o estranho e provocador, sua vibe exala teatralidade, experimentação e o gótico tradicional.<br>
+            mensagemBanda = `Buscando sempre o incomum, o estranho e provocador, sua vibe exala teatralidade, experimentação e o gótico tradicional.<br>
             <a href="https://youtu.be/Yy9h2q_dr9k?si=QtW2up1f2k5nyH7J" target="_blank">Ouça Bauhaus - Bela Lugosi's Dead</a><br>
             <a href="dashboard.html"> Acesse a Dashboard e CONFIRA seus resultados com outros usuários!</a>`
             imagem = './assets/bauhaus.jpg'
         } else if (bandaFinal == 'She Past Away') {
-            texto = `Carregado de uma aura fria e misteriosa, suas emoções são expressas por meio do silêncio e olhares, somente pelo que o Darkwave turco pode propor!<br>
+            mensagemBanda = `Carregado de uma aura fria e misteriosa, suas emoções são expressas por meio do silêncio e olhares, somente pelo que o Darkwave turco pode propor!<br>
             <a href="https://youtu.be/t7mPRAiwPdk?si=_3KATjWMbevyR7GU" target="_blank">Ouça She Past Away - Katarsis</a><br>
             <a href="dashboard.html"> Acesse a Dashboard e CONFIRA seus resultados com outros usuários!</a>`
             imagem = './assets/shepast.jpg'
         }
         else if (bandaFinal == 'London After Midnight') {
-            texto = `Uma alma intensa, emocional e crítica. Um espírito inquieto que tem muito amor dentro, busca sempre o melhor nas pessoas.<br>
+            mensagemBanda = `Uma alma intensa, emocional e crítica. Um espírito inquieto que tem muito amor dentro, busca sempre o melhor nas pessoas.<br>
             <a href="https://youtu.be/egLAkA4HrXU?si=aU1O3UIKtZD8J8EV" target="_blank">Ouça London After Midnight - Sacrifce</a><br>
             <a href="dashboard.html"> Acesse a Dashboard e CONFIRA seus resultados com outros usuários!</a>`
             imagem = './assets/lam.jpg'
         } else if (bandaFinal == 'Siouxsie and the Banshees') {
-            texto = `Você é uma pessoa de atitude e de identidade própria. Muitas vezes alguém ousado e caótico, porém extremamente expressivo!<br>
+            mensagemBanda = `Você é uma pessoa de atitude e de identidade própria. Muitas vezes alguém ousado e caótico, porém extremamente expressivo!<br>
             <a href="https://youtu.be/wsOHvP1XnRg?si=56XjKH6NF8wzFH12" target="_blank">Ouça Siouxsie and The Banshees - Cities In Dust</a><br>
             <a href="dashboard.html"> Acesse a Dashboard e CONFIRA seus resultados com outros usuários!</a>`
             imagem = './assets/siouxsie.jpg'
         } else if (bandaFinal == 'The Sisters of Mercy') {
-            texto = `Alguém enigmático e carregado de presença (aura), a estética dark e postura fria combinam muito com sua pessoa.<br>
+            mensagemBanda = `Alguém enigmático e carregado de presença (aura), a estética dark e postura fria combinam muito com sua pessoa.<br>
             <a href="https://youtu.be/aC-enyY6W8I?si=iiVpPE9Rd7lRZ9M8" target="_blank">Ouça Sisters Of Mercy - Lucretia My Reflection</a><br>
             <a href="dashboard.html"> Acesse a Dashboard e CONFIRA seus resultados com outros usuários!</a>`
             imagem = './assets/sisters.jpg'
         } else if (bandaFinal == 'The Cure') {
-            texto = `Melancólico e sonhador. Você sente o mundo profundamente, enxerga beleza em tudo, até nas pequenas coisas. Você é alguém gentil e uma ótima amizade para quem está a sua volta.<br>
+            mensagemBanda = `Melancólico e sonhador. Você sente o mundo profundamente, enxerga beleza em tudo, até nas pequenas coisas. Você é alguém gentil e uma ótima amizade para quem está a sua volta.<br>
             <a href="https://youtu.be/n3nPiBai66M?si=42eLuU25vwXCa7jX" target="_blank">Ouça The Cure - Just Like Heaven</a><br>
             <a href="dashboard.html"> Acesse a Dashboard e CONFIRA seus resultados com outros usuários!</a>`
             imagem = './assets/thecure.jpg'
         } else if (bandaFinal == 'Christian Death') {
-            texto = `Você é um gótico raiz, provocador e sem medo dos tabus impostos, você ama viver a arte como forma de expressão profunda da sua alma sombria.<br>
+            mensagemBanda = `Você é um gótico raiz, provocador e sem medo dos tabus impostos, você ama viver a arte como forma de expressão profunda da sua alma sombria.<br>
             <a href="https://youtu.be/_uVuzf3q4Zs?si=84tJePrSF_9L0NmF" target="_blank">Ouça Christian Death - Romeo's Distress</a><br>
             <a href="dashboard.html"> Acesse a Dashboard e CONFIRA seus resultados com outros usuários!</a>`
             imagem = './assets/christian.jpg'
         } else if (bandaFinal == 'Qual') {
-            texto = `Sua alma conversa com atmosferas densas, assim como os vocais do industral, sua alma é vibrante e transforma sua própria angústia em estética.<br>
+            mensagemBanda = `Sua alma conversa com atmosferas densas, assim como os vocais do industral, sua alma é vibrante e transforma sua própria angústia em estética.<br>
             <a href="https://youtu.be/a3n3gfr3poc?si=uyRTu1ik1hykANE7" target="_blank">Ouça Qual - Inject Your Mind</a>>br>
             <a href="dashboard.html"> Acesse a Dashboard e CONFIRA seus resultados com outros usuários!</a>`
             imagem = './assets/qual.jpg'
         } else if (bandaFinal == 'Twin Tribes') {
-            texto = `Você é alguém nostálgico (o oposto do Lebanon Hanover, pois Sadness Is Rebellion cita que nostalgia é negação), você curte atmosferas suaves, com um sintetizador tocando de fundo.<br>
+            mensagemBanda = `Você é alguém nostálgico (o oposto do Lebanon Hanover, pois Sadness Is Rebellion cita que nostalgia é negação), você curte atmosferas suaves, com um sintetizador tocando de fundo.<br>
             <a href="https://youtu.be/-XEavwcHU78?si=alKF5QRGYHB3adyd" target="_blank">Ouça Twin Tribes - Monolith</a><br>
             <a href="dashboard.html"> Acesse a Dashboard e CONFIRA seus resultados com outros usuários!</a>`
             imagem = './assets/twin.jpg'
         } else if (bandaFinal == 'Ultra Sunn') {
-            texto = `Sua alma é dançante, uma mescla de sombria com enérgica. Gosta de agradar a todos ao seu redor com seu bom humor, porém ao mesmo tempo que sua energia é alta, ela se esgota rapidamente e você frequentemente precisa ficar quieto / se isolar para repor as energias<br>
+            mensagemBanda = `Sua alma é dançante, uma mescla de sombria com enérgica. Gosta de agradar a todos ao seu redor com seu bom humor, porém ao mesmo tempo que sua energia é alta, ela se esgota rapidamente e você frequentemente precisa ficar quieto / se isolar para repor as energias<br>
             <a href="https://youtu.be/DZc08Nqi4qY?si=L26fXHf3qZ52YS1_" target="_blank">Ouça Ultra Sunn - Keep Your Eyes Peeled</a><br>
             <a href="dashboard.html"> Acesse a Dashboard e CONFIRA seus resultados com outros usuários!</a>`
             imagem = './assets/ultrasunn.jpg'
         } else if (bandaFinal == 'Pink Turns Blue') {
-            texto = `Você carrega um espírito melancólico, porém muito resiliente. Mesmo na escuridão, você consegue encontrar força emocional e esperança.<br>
+            mensagemBanda = `Você carrega um espírito melancólico, porém muito resiliente. Mesmo na escuridão, você consegue encontrar força emocional e esperança.<br>
             <a href="https://youtu.be/ZYe96OynilE?si=Wvxc5bYSX4bEezGF" target="_blank">Ouça Pink Turns Blue - Your Master Is Calling</a><br>
             <a href="dashboard.html"> Acesse a Dashboard e CONFIRA seus resultados com outros usuários!</a>`
             imagem = './assets/pink.jpg'
         } else {
-            texto = `Você possui uma alma urbana, fria, porém elegante. Carrega um ar de mistério, desejo, melancolia e tensão emocional. Sua estética moderna nunca perde a classe.<br>
+            mensagemBanda = `Você possui uma alma urbana, fria, porém elegante. Carrega um ar de mistério, desejo, melancolia e tensão emocional. Sua estética moderna nunca perde a classe.<br>
             <a href="https://youtu.be/ixw_bLVUL34?si=pKITAs6D25vW42Al">Ouça She Wants Revenge - Tear You Apart</a><br>
             <a href="dashboard.html"> Acesse a Dashboard e CONFIRA seus resultados com outros usuários!</a>`
             imagem = './assets/shewants.jpg'
@@ -283,7 +298,7 @@
             <b>${bandaFinal}</b>
             <br><br>
             <img src="${imagem}" style="width:300px; border-radius:10px; margin-bottom:20px;">
-            <p>${texto}</p>
+            <p>${mensagemBanda}</p>
             <button id="refazerQuiz" style="border-radius:15px; background-color: #2e003e; cursor:pointer; color: #eaeaea; font-size:20px;">Refazer Quiz</button>
         </center>
     `;
@@ -294,11 +309,6 @@
         document.getElementById("refazerQuiz").onclick = function () {
             resultado.style.display = "none";
             quiz.style.display = "block";
-
-            var radios = document.querySelectorAll("input[type='radio']");
-            for (var i = 0; i < radios.length; i++) {
-                radios[i].checked = false
-            }
         };
         const p1 = respostas[0];
         const p2 = respostas[1];

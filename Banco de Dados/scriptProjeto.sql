@@ -38,10 +38,6 @@ truncate table quiz;
 GRANT INSERT ON alittlepieceofmysoul.* TO escritorgotico@localhost;
 GRANT SELECT ON alittlepieceofmysoul.* TO escritorgotico@localhost; 
 FLUSH PRIVILEGES;
-select * from ResultadosQuiz;
-select * from quiz;
-select * from cadastro;
-drop table resultadosquiz;
 
 CREATE VIEW vw_kpis AS 
 SELECT
@@ -64,3 +60,5 @@ SELECT
 				bandaFavorita FROM Cadastro GROUP BY bandaFavorita ORDER BY COUNT(*) DESC LIMIT 1) AS bandaEscolhida;
 
 select * from vw_kpis;
+
+select * from ResultadosQuiz;
