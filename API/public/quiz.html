@@ -135,14 +135,22 @@
         // Armazena as respostas no vetor e verifica se todas as inputs foram marcadas
         var respostas = [];
         for (var i = 1; i <= 7; i++) {
-            var marcada = document.querySelector("input[name='p" + i + "']:checked"); // Captura as inputs com name p e concatena com o valor de i, verificando se todas foram marcadas
-            if (!marcada) {
+            var opcoes = document.getElementsByName("p" + i); // São 7 perguntas no total com 4 alternativas, percorre todas as alternativas pelo nome, p1, p2 e assim por diante
+            var marcada = null; // opções é um HTMLCollection, similar a um vetor, uma lista de tags input do tipo radio que são as alternativas das perguntas
+
+            for (var j = 0; j < opcoes.length; j++) { // Segundo for, percorre dentre as alternativas quais foram marcadas
+                if (opcoes[j].checked == true) { // método checked para verificar se a alternativa (input do tipo radio) foi marcada, se não foi marcada ele ignora
+                    marcada = opcoes[j]; // atribui o valor para a variável marcada, a fim de verificar depois se o valor continua nulo
+                }
+            }
+
+            if (marcada == null) { // se o valor persiste como nulo, retorna o alert
                 alert("Responda todas as perguntas!");
                 return;
             }
+
             respostas.push(marcada.value);
         }
-
         // Início da contagem de bandas
         var bandas = [
             "HIM", "London After Midnight", "Christian Death", "Bauhaus",
@@ -157,7 +165,7 @@
         function pontuar(nome) {
             for (var i = 0; i < bandas.length; i++) {
                 if (bandas[i] == nome) { // se bandas na posição i == ela mesma, tipo bandas[0] == 'HIM' == TRUE, isso pelo valor das inputs do tipo radio declaradas no html
-                    contagem[i]++; // Então, se 
+                    contagem[i]++; // Então, se a alternativa for equivalente a banda, pontuará a banda
                 }
             }
         }
