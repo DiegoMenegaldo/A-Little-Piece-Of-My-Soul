@@ -45,7 +45,7 @@ function cadastrar(req, res) {
     var genero = req.body.generoServer;
     var banda = req.body.bandaServer;
     var senha = req.body.senhaServer;
-    
+
     // Faça as validações dos valores
     if (nome == undefined) {
         res.status(400).send("Seu nome está undefined!");
@@ -55,15 +55,18 @@ function cadastrar(req, res) {
         res.status(400).send("Sua senha está undefined!");
     } else if (genero == undefined) {
         res.status(400).send("Seu gênero favorito está undefined!");
-    } else if (banda == undefined){
+    } else if (banda == undefined) {
         res.status(400).send("Sua banda está undefined!");
-    } else{
+    } else {
 
+
+        console.log('a')
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
         usuarioModel.cadastrar(nome, email, genero, banda, senha)
             .then(
+
                 function (resultado) {
-                    res.json(resultado);
+                    return res.status(201).json(resultado);
                 }
             ).catch(
                 function (erro) {

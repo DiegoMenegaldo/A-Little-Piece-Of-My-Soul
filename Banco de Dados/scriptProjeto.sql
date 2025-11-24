@@ -1,4 +1,4 @@
-CREATE USER escritorgotico@localhost IDENTIFIED BY 'AmoMusicaGotica@123';
+CREATE USER escritorgotico@'%' IDENTIFIED BY 'AmoMusicaGotica123!';
 
 CREATE DATABASE alittlepieceofmysoul;
 USE alittlepieceofmysoul;
@@ -22,7 +22,7 @@ CREATE TABLE Quiz(
     p6 CHAR(1) NOT NULL,
     p7 CHAR(1) NOT NULL
 );
-
+desc Cadastro;
 CREATE TABLE ResultadosQuiz(
 	idResultado INT AUTO_INCREMENT,
     fkCadastro INT, 
@@ -35,8 +35,8 @@ CREATE TABLE ResultadosQuiz(
 );
 drop table ResultadosQuiz;
 truncate table quiz;
-GRANT INSERT ON alittlepieceofmysoul.* TO escritorgotico@localhost;
-GRANT SELECT ON alittlepieceofmysoul.* TO escritorgotico@localhost; 
+GRANT INSERT ON alittlepieceofmysoul.* TO 'escritorgotico'@'%';
+GRANT SELECT ON alittlepieceofmysoul.* TO 'escritorgotico'@'%'; 
 FLUSH PRIVILEGES;
 
 CREATE VIEW vw_kpis AS 
@@ -60,5 +60,6 @@ SELECT
 				bandaFavorita FROM Cadastro GROUP BY bandaFavorita ORDER BY COUNT(*) DESC LIMIT 1) AS bandaEscolhida;
 
 select * from vw_kpis;
-
 select * from ResultadosQuiz;
+select * from quiz;
+
