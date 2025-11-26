@@ -617,7 +617,7 @@ body {
 }
 /* FIM DO SOBRE MIM */
 
-/* SUBBULTURA */
+/* SUBCULTURA */
 
 .a-subcultura .container{
     height: 100%;
@@ -713,6 +713,38 @@ body {
     border-radius: 15px;
 }
 
+/* .filmes{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    height: 100%;
+    width: 100%;
+}
+
+.filme{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 100%;
+    width: 80%;
+}
+
+.filme img{
+    height: 350px;
+    width: 300px;
+} */
+
+.link-bandas{
+    text-align: center;
+    font-size: 25px;
+    text-decoration: underline;
+    font-weight: bold;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.link-bandas a:hover{
+    color: #c4a1ff;
+}
 /* FIM DA SUBCULTURA */
 
 /* BANDAS */
