@@ -70,7 +70,7 @@ SELECT
     COUNT(resultado) AS totalBanda
 FROM ResultadosQuiz
 GROUP BY resultado
-ORDER BY 'Total de cada banda' DESC;
+ORDER BY totalBanda DESC;
 
 CREATE VIEW vw_grafico1 AS 
 	SELECT 
@@ -78,8 +78,26 @@ CREATE VIEW vw_grafico1 AS
     COUNT(resultado) AS totalBanda
 FROM ResultadosQuiz
 GROUP BY resultado
-ORDER BY 'Total de cada banda' DESC;
+ORDER BY totalBanda DESC;
+
+SELECT * FROM vw_grafico1;
 
 -- GRÁFICO 2 (Bandas pelo cadastro)
+SELECT 
+	bandaFavorita AS BandaFavorita,
+    COUNT(bandaFavorita) AS totalBandaFavorita
+FROM Cadastro
+GROUP BY bandaFavorita 
+ORDER BY totalBandaFavorita DESC;
 
+CREATE VIEW vw_grafico2 AS
+	SELECT 
+	bandaFavorita AS BandaFavorita,
+    COUNT(bandaFavorita) AS totalBandaFavorita
+FROM Cadastro
+GROUP BY bandaFavorita 
+ORDER BY totalBandaFavorita DESC;
 
+SELECT * FROM vw_grafico2;
+
+-- GRÁFICO 3 (Gêneros pelo cadastro)

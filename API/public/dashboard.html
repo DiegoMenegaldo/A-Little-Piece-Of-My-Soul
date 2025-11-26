@@ -92,19 +92,6 @@
 </body>
 </html>
 <script>
-    // Esse é o fetch para as kpis serem exibidas na tela:
-    // fetch("/dashboard/kpis")
-    //     .then(res => res.json())
-    //     .then(json =>{
-    //         const kpis = json[0];
-    //         qtdCadastro.innerHTML = kpis.qtdCadastro;
-    //         qtdResposta.innerHTML = kpis.qtdResposta;
-    //         maisSorteada.innerHTML = kpis.maisSorteada;
-    //         menosSorteada.innerHTML = kpis.menosSorteada;
-    //         generoEscolhido.innerHTML = kpis.generoEscolhido;
-    //         bandaEscolhida.innerHTML = kpis.bandaEscolhida;
-    //     });
-
     fetch("/dashboard/kpis",{
         method: "GET",
         headers: {
@@ -163,4 +150,66 @@
             }
         });
     });
+
+    fetch("/dashboard/graficoBandaCadastro")
+        .then(res => res.json())
+        .then(listaBandas => {
+            var labels = [];
+            var qtdResultados = [];
+
+            for (var i = 0; i < listaBandas.length; i++){
+                labels.push(listaBandas[i].BandaFavorita);
+                qtdResultados.push(listaBandas[i].totalBandaFavorita);
+            }
+
+            new Chart(document.getElementById("bandasCadastro"), {
+                type: "pie",
+                data: {
+                    labels,
+                    datasets: [
+                        {
+                            label: "Quantidade de Resultados no Quiz por banda",
+                            data: qtdResultados,
+                            backgroundColor: [
+                                "#2e003e", 
+                                "#c4a1ff", 
+                                "#660022", 
+                                "#ff00b3",
+                                "#fffb00", 
+                                "#5900ff", 
+                                "#00d9ff", 
+                                "#562892",
+                                "#00ff15", 
+                                "#1f1f1f", 
+                                "#16012e", 
+                                "#ff5e00",
+                                "#5a2400", 
+                                "#bbff00"
+                            ]
+                        }
+                    ]
+                },
+                options: {
+                    responsive: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: "Bandas favoritas de acordo com o cadastro",
+                            color: "#eaeaea",
+                            font: {
+                                size: 30
+                            }
+                        },
+                        legend: {
+                            labels: {
+                                color: "#eaeaea",
+                                font: {
+                                    size: 18
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
 </script>
