@@ -101,3 +101,19 @@ ORDER BY totalBandaFavorita DESC;
 SELECT * FROM vw_grafico2;
 
 -- GRÁFICO 3 (Gêneros pelo cadastro)
+SELECT 
+	generoFavorito, 
+    COUNT(generoFavorito) AS qtdGeneroFavorito
+FROM CADASTRO
+GROUP BY generoFavorito
+ORDER BY qtdGeneroFavorito;
+
+CREATE VIEW vw_grafico3 AS
+	SELECT 
+	generoFavorito, 
+    COUNT(generoFavorito) AS qtdGeneroFavorito
+FROM CADASTRO
+GROUP BY generoFavorito
+ORDER BY qtdGeneroFavorito;
+
+SELECT * FROM vw_grafico3;
