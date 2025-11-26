@@ -112,7 +112,7 @@ CREATE VIEW vw_grafico3 AS
 	SELECT 
 	generoFavorito, 
     COUNT(generoFavorito) AS qtdGeneroFavorito
-FROM CADASTRO
+FROM Cadastro
 GROUP BY generoFavorito
 ORDER BY qtdGeneroFavorito;
 
