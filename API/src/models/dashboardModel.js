@@ -5,6 +5,17 @@ function listarKpis(){
     return database.executar(instrucaoSql)
 }
 
+function graficoQuiz(){
+    var instrucaoSql = `SELECT * FROM vw_grafico1;`;
+    return database.executar(instrucaoSql)
+}
+
+function graficoBandaCadastro(){
+    var instrucaoSql = `SELECT * FROM vw_grafico2;`;
+    return database.executar(instrucaoSql)
+}
 module.exports = {
-    listarKpis
+    listarKpis,
+    graficoQuiz,
+    graficoBandaCadastro
 };

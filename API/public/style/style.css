@@ -962,3 +962,15 @@ body {
     transform: scale(1.10);
     transition: transform 0.5s ease;
 }
+
+.dashboard .containerGrafico{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+#bandasQuiz{
+    background-color: #fff2f2;
+    border-radius: 15px;
+}

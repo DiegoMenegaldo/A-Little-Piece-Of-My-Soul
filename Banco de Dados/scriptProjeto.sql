@@ -39,6 +39,7 @@ GRANT INSERT ON alittlepieceofmysoul.* TO 'escritorgotico'@'%';
 GRANT SELECT ON alittlepieceofmysoul.* TO 'escritorgotico'@'%'; 
 FLUSH PRIVILEGES;
 
+-- BLOCO DAS KPIS
 CREATE VIEW vw_kpis AS 
 SELECT
             (SELECT 
@@ -62,4 +63,23 @@ SELECT
 select * from vw_kpis;
 select * from ResultadosQuiz;
 select * from quiz;
+
+-- GRÁFICO 1 (Bandas do Quiz)
+SELECT 
+	resultado AS bandaResultado, 
+    COUNT(resultado) AS totalBanda
+FROM ResultadosQuiz
+GROUP BY resultado
+ORDER BY 'Total de cada banda' DESC;
+
+CREATE VIEW vw_grafico1 AS 
+	SELECT 
+	resultado AS bandaResultado, 
+    COUNT(resultado) AS totalBanda
+FROM ResultadosQuiz
+GROUP BY resultado
+ORDER BY 'Total de cada banda' DESC;
+
+-- GRÁFICO 2 (Bandas pelo cadastro)
+
 

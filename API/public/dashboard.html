@@ -79,7 +79,9 @@
                 </div>
             </div>
             <div class="containerGrafico">
-
+                <canvas id="bandasQuiz" height="500" width="600"></canvas>
+                <canvas id="bandasCadastro" height="500" width="600"></canvas>
+                <canvas id="generosCadastro" height="500" width="600"></canvas>
             </div>
         </div>
     </div>
@@ -119,4 +121,46 @@
             generoEscolhido.innerHTML = kpis.generoEscolhido;
             bandaEscolhida.innerHTML = kpis.bandaEscolhida;
     })
+
+    fetch("/dashboard/graficoQuiz")
+        .then(res => res.json())
+        .then(listaBandas => {
+            var labels = [];
+            var qtdResultados = [];
+
+            for (var i = 0; i < listaBandas.length; i++){
+                labels.push(listaBandas[i].bandaResultado);
+                qtdResultados.push(listaBandas[i].totalBanda);
+            }
+
+            new Chart(document.getElementById("bandasQuiz"), {
+            type: "bar",
+            data: {
+                labels,
+                datasets: [
+                    {
+                        label: "Quantidade de Resultados no Quiz por banda",
+                        data: qtdResultados,
+                        backgroundColor: [
+                            "#2e003e",
+                            "#c4a1ff",
+                            "#660022"
+                        ]
+                    }
+                ]
+            },
+            options: {
+                responsive: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: "Bandas mais sorteadas no Quiz",
+                        font: {
+                            size: 30
+                        }
+                    }
+                }
+            }
+        });
+    });
 </script>
