@@ -34,8 +34,7 @@ CREATE TABLE ResultadosQuiz(
     FOREIGN KEY (fkCadastro) REFERENCES Cadastro(idCadastro),
     FOREIGN KEY (fkQuiz) REFERENCES Quiz(idQuiz)
 );
-drop table ResultadosQuiz;
-truncate table quiz;
+
 GRANT INSERT ON alittlepieceofmysoul.* TO 'escritorgotico'@'%';
 GRANT SELECT ON alittlepieceofmysoul.* TO 'escritorgotico'@'%'; 
 FLUSH PRIVILEGES;
