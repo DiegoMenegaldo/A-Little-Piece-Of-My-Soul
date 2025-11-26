@@ -22,7 +22,8 @@ CREATE TABLE Quiz(
     p6 CHAR(1) NOT NULL,
     p7 CHAR(1) NOT NULL
 );
-desc Cadastro;
+
+
 CREATE TABLE ResultadosQuiz(
 	idResultado INT AUTO_INCREMENT,
     fkCadastro INT, 
@@ -63,6 +64,7 @@ SELECT
 select * from vw_kpis;
 select * from ResultadosQuiz;
 select * from quiz;
+select * from Cadastro;
 
 -- GRÁFICO 1 (Bandas do Quiz)
 SELECT 
@@ -117,3 +119,13 @@ GROUP BY generoFavorito
 ORDER BY qtdGeneroFavorito;
 
 SELECT * FROM vw_grafico3;
+
+-- SELECT DO NOME DA PESSOA, EMAIL, BANDA FAVORITA NO CADASTRO, GÊNERO FAVORITO NO CADASTRO E BANDA RESULTANTE DO QUIZ
+SELECT 
+	c.nomeCompleto AS 'Nome da Pessoa',
+    c.email AS 'Email',
+    c.generoFavorito AS 'Gênero gótico favorito no cadastro',
+    c.bandaFavorita AS 'Banda gótica favorita no cadastro',
+    r.resultado AS 'Banda resultado no quiz'
+FROM ResultadosQuiz AS r JOIN Cadastro AS c 
+	ON r.fkCadastro = c.idCadastro;
