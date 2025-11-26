@@ -212,4 +212,60 @@
                 }
             });
         });
+    
+    fetch("/dashboard/graficoGeneroCadastro")
+        .then(res => res.json())
+        .then(listaGeneros => {
+            var labels = [];
+            var qtdResultados = [];
+
+            for (var i = 0; i < listaGeneros.length; i++){
+                labels.push(listaGeneros[i].generoFavorito);
+                qtdResultados.push(listaGeneros[i].qtdGeneroFavorito);
+            }
+
+            new Chart(document.getElementById("generosCadastro"), {
+                type: "pie",
+                data: {
+                    labels,
+                    datasets: [
+                        {
+                            label: "Quantidade de Resultados no Quiz por banda",
+                            data: qtdResultados,
+                            backgroundColor: [
+                                "#00d9ff", 
+                                "#562892",
+                                "#00ff15", 
+                                "#1f1f1f", 
+                                "#16012e", 
+                                "#ff5e00",
+                                "#5a2400",
+                                "#2e003e"
+                            ]
+                        }
+                    ]
+                },
+                options: {
+                    responsive: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: "Gêneros favoritos de acordo com o cadastro",
+                            color: "#eaeaea",
+                            font: {
+                                size: 30
+                            }
+                        },
+                        legend: {
+                            labels: {
+                                color: "#eaeaea",
+                                font: {
+                                    size: 18
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
 </script>

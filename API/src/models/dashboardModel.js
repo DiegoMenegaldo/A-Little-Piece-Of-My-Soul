@@ -14,8 +14,14 @@ function graficoBandaCadastro(){
     var instrucaoSql = `SELECT * FROM vw_grafico2;`;
     return database.executar(instrucaoSql)
 }
+
+function graficoGeneroCadastro(){
+    var instrucaoSql = `SELECT * FROM vw_grafico3;`;
+    return database.executar(instrucaoSql)
+}
 module.exports = {
     listarKpis,
     graficoQuiz,
-    graficoBandaCadastro
+    graficoBandaCadastro,
+    graficoGeneroCadastro
 };
