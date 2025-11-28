@@ -34,7 +34,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 120px;
+    padding: 0 10px;
     margin-left: 0;
 }
 
@@ -439,19 +439,19 @@ body {
 /* FIM DO LOGIN */
 
 /* SOBRE MIM */
-.criador{
+.criador {
     height: 100vh;
     width: 100vw;
 }
 
-.criador .container{
+.criador .container {
     display: flex;
     height: 100%;
     width: 100%;
     gap: 1%;
 }
 
-.criador .container .container-left{
+.criador .container .container-left {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -465,14 +465,14 @@ body {
     margin-top: 1%;
 }
 
-.criador .container .container-left h2{
+.criador .container .container-left h2 {
     font-family: 'Cinzel Decorative';
     text-decoration: underline;
     font-size: 30px;
 }
 
 
-.criador .container .container-right{
+.criador .container .container-right {
     justify-content: center;
     align-items: center;
     display: flex;
@@ -481,14 +481,14 @@ body {
     margin-top: 2%;
 }
 
-.criador .container .container-right img{
+.criador .container .container-right img {
     height: 600px;
     width: 500px;
     border-radius: 15px;
     margin-bottom: 5%;
 }
 
-.ranking{
+.ranking {
     height: 100%;
     width: 100%;
     display: flex;
@@ -497,7 +497,7 @@ body {
     flex-direction: column;
 }
 
-.ranking h3{
+.ranking h3 {
     font-size: 27px;
     font-family: 'Cinzel Decorative';
     text-decoration: underline;
@@ -505,7 +505,7 @@ body {
 
 .tabela-ranking {
     width: 60%;
-    background-color: #111; 
+    background-color: #111;
     color: #eee;
     font-family: 'Cinzel Decorative', serif;
 }
@@ -529,7 +529,7 @@ body {
     background-color: #222;
 }
 
-.shows-goticos{
+.shows-goticos {
     height: 100%;
     width: 100%;
     display: flex;
@@ -537,13 +537,13 @@ body {
     align-items: center;
 }
 
-.shows-goticos h3{
+.shows-goticos h3 {
     font-family: 'Cinzel Decorative';
     font-size: 27px;
     text-decoration: underline;
 }
 
-.shows-goticos .container{
+.shows-goticos .container {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -552,7 +552,7 @@ body {
     width: 100%;
 }
 
-.shows-goticos .container .container-left{
+.shows-goticos .container .container-left {
     display: flex;
     width: 50%;
     flex-direction: column;
@@ -561,17 +561,17 @@ body {
     border: 2px solid #2e003e;
 }
 
-.shows-goticos .container .container-left ul{
+.shows-goticos .container .container-left ul {
     list-style: none;
     font-size: 18px;
 }
 
-.shows-goticos .container .container-left:hover{
+.shows-goticos .container .container-left:hover {
     transform: scale(1.05);
     transition: transform 0.5s ease;
 }
 
-.shows-goticos .container .container-right{
+.shows-goticos .container .container-right {
     margin-top: 2%;
     width: 70%;
     display: flex;
@@ -579,23 +579,23 @@ body {
     align-items: center;
 }
 
-.shows-goticos .container .container-right video{
+.shows-goticos .container .container-right video {
     width: 90%;
 }
 
-.shows-goticos .container .container-right span{
+.shows-goticos .container .container-right span {
     text-decoration: underline;
     font-size: 18px;
     text-align: center;
 }
 
-.shows-outros{
+.shows-outros {
     height: 100%;
     width: 100%;
     display: flex;
 }
 
-.shows-outros .container{
+.shows-outros .container {
     display: flex;
     height: 100%;
     width: 100%;
@@ -606,26 +606,27 @@ body {
     margin-bottom: 2%;
 }
 
-.shows-outros .container h2{
+.shows-outros .container h2 {
     font-size: 25px;
     text-decoration: underline;
 }
 
-.shows-outros .container ul{
+.shows-outros .container ul {
     list-style: none;
     font-size: 20px;
 }
+
 /* FIM DO SOBRE MIM */
 
 /* SUBCULTURA */
 
-.a-subcultura .container{
+.a-subcultura .container {
     height: 100%;
     width: 100%;
     display: flex;
 }
 
-.a-subcultura .container .container-left{
+.a-subcultura .container .container-left {
     height: 100%;
     width: 50%;
     display: flex;
@@ -639,36 +640,36 @@ body {
     border-radius: 15px;
 }
 
-.a-subcultura .container .container-left h2{
+.a-subcultura .container .container-left h2 {
     text-decoration: underline;
     font-size: 40px;
 }
 
-.a-subcultura a{
+.a-subcultura a {
     color: #c4a1ff;
 }
 
-.a-subcultura a:hover{
+.a-subcultura a:hover {
     color: #ffb3d9;
 }
 
 
-.a-subcultura .container .container-left p{
+.a-subcultura .container .container-left p {
     font-size: 20px;
 }
 
-.a-subcultura .container .container-right{
+.a-subcultura .container .container-right {
     height: 100%;
     width: 50%;
     margin-left: 1%;
 }
 
-.a-subcultura .container .container-right img{
+.a-subcultura .container .container-right img {
     height: 102%;
     width: 100%;
 }
 
-.esteticas{
+.esteticas {
     display: flex;
     flex-direction: column;
     height: 500%;
@@ -677,18 +678,18 @@ body {
     margin-top: 2%;
 }
 
-.esteticas h2{
+.esteticas h2 {
     font-size: 40px;
     text-decoration: underline;
     font-family: 'Cinzel Decorative';
 }
 
-.esteticas p{
+.esteticas p {
     font-size: 20px;
     text-align: center;
 }
 
-.vertente{
+.vertente {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -697,12 +698,12 @@ body {
     margin-bottom: 1%;
 }
 
-.vertente h3{
+.vertente h3 {
     font-size: 30px;
     text-decoration: underline;
 }
 
-.vertente p{
+.vertente p {
     text-align: center;
     font-size: 20px;
 }
@@ -733,7 +734,7 @@ body {
     width: 300px;
 } */
 
-.link-bandas{
+.link-bandas {
     text-align: center;
     font-size: 25px;
     text-decoration: underline;
@@ -743,16 +744,17 @@ body {
     font-family: 'Cinzel Decorative';
 }
 
-.link-bandas a:hover{
+.link-bandas a:hover {
     color: #c4a1ff;
 }
+
 /* FIM DA SUBCULTURA */
 
 /* BANDAS */
 .generos {
     display: flex;
     flex-direction: column;
-    
+
     padding: 20px;
     align-items: center;
     justify-content: center;
@@ -787,7 +789,7 @@ body {
     border: 3px solid #7b1339;
 }
 
-.banda:hover{
+.banda:hover {
     transform: scale(1.10);
     transition: transform 0.5s ease;
 }
@@ -813,73 +815,76 @@ body {
 .banda a:hover {
     color: #ffb3d9;
 }
+
 /* FIM DAS BANDAS */
 
 /* LOCAIS EM SP */
-.introducao{
+.introducao {
     display: flex;
     justify-content: center;
     text-align: center;
     flex-direction: column;
 }
 
-.introducao h2{
+.introducao h2 {
     font-size: 40px;
     text-decoration: underline;
 }
 
-.introducao p{
+.introducao p {
     font-size: 20px;
 }
 
-.locais .container{
+.locais .container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     height: 100%;
     width: 100%;
-    flex:1;
+    flex: 1;
     justify-content: center;
     gap: 20px;
     padding: 10px;
 }
 
-.card-local{
+.card-local {
     display: flex;
     flex-direction: column;
     border: 3px solid #7b1339;
     text-align: center;
 }
 
-.card-local:hover{
+.card-local:hover {
     transform: scale(1.10);
     transition: transform 0.5s ease;
 }
 
-.card-local h3{
+.card-local h3 {
     font-size: 20px;
     text-decoration: underline;
     font-family: 'Cinzel Decorative';
 }
 
-.card-local p{
+.card-local p {
     font-size: 18px;
     text-align: center;
 }
-.card-local a{
+
+.card-local a {
     font-size: 18px;
     color: #c4a1ff;
     text-align: center;
 }
 
-.card-local a:hover{
+.card-local a:hover {
     font-size: 18px;
     color: #660022;
     text-align: center;
 }
+
 /* FIM DOS LOCAIS EM SP */
 
 /* QUIZ */
-.introducaoQuiz{
+.introducaoQuiz {
     display: flex;
     height: 100%;
     width: 100%;
@@ -889,30 +894,31 @@ body {
     text-align: center;
 }
 
-.introducaoQuiz h1{
+.introducaoQuiz h1 {
     font-family: 'Cinzel Decorative';
     font-size: 45px;
     text-decoration: underline;
     margin-bottom: 0;
 }
 
-.introducaoQuiz p{
+.introducaoQuiz p {
     font-size: 28px;
 }
 
-.quizGotico{
+.quizGotico {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.botao-quiz{
+.botao-quiz {
     margin-top: 2%;
     display: flex;
     justify-content: center;
 }
-.quizGotico button{
+
+.quizGotico button {
     border-radius: 15px;
     background-color: #2e003e;
     cursor: pointer;
@@ -920,25 +926,25 @@ body {
     font-size: 20px;
 }
 
-.quizGotico button:hover{
+.quizGotico button:hover {
     align-self: center;
     cursor: pointer;
     background-color: #c4a1ff;
 }
 
 
-.pergunta{
+.pergunta {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.pergunta h2{
+.pergunta h2 {
     text-decoration: underline;
     font-size: 24px;
 }
 
-.pergunta span{
+.pergunta span {
     display: flex;
     align-items: center;
     font-size: 20px;
@@ -948,7 +954,7 @@ body {
 /* FIM DO QUIZ */
 
 /* DASHBOARD */
-.introducaoDash{
+.introducaoDash {
     display: flex;
     height: 100%;
     width: 100%;
@@ -958,7 +964,7 @@ body {
     text-align: center;
 }
 
-.introducaoDash h1{
+.introducaoDash h1 {
     font-family: 'Cinzel Decorative';
     font-size: 45px;
     text-decoration: underline;
@@ -966,54 +972,55 @@ body {
     text-align: center;
 }
 
-.dashboard{
+.dashboard {
     display: flex;
     height: 100%;
     width: 100%;
     flex-direction: column;
 }
 
-.dashboard .container{
+.dashboard .container {
     display: flex;
     height: 100%;
     width: 100%;
     flex-direction: column;
 }
 
-.dashboard .container .containerKpi{
+.dashboard .container .containerKpi {
     display: flex;
     justify-content: space-around;
     text-align: center;
     font-size: 20px;
 }
-.kpi{
+
+.kpi {
     background-color: #2e003e;
     border: 2px solid #ffb3d9;
 }
 
-.kpi:hover{
+.kpi:hover {
     transform: scale(1.10);
     transition: transform 0.5s ease;
 }
 
-.dashboard .containerGrafico{
+.dashboard .containerGrafico {
     display: flex;
     justify-content: space-around;
     margin-top: 1%;
     margin-bottom: 1%;
 }
 
-#bandasQuiz{
+#bandasQuiz {
     background-color: #fff2f2;
     border-radius: 15px;
 }
 
-#bandasCadastro{
+#bandasCadastro {
     background-color: #652f7e;
     border-radius: 15px;
 }
 
-#generosCadastro{
+#generosCadastro {
     background-color: #252525;
     border-radius: 15px;
 }
